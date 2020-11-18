@@ -1,0 +1,14 @@
+CREATE PROCEDURE p1()
+BEGIN
+SELECT year(f_nac), COUNT(f_nac) from usuario where tipo_usuario='P' GROUP BY year(f_nac);
+END//
+
+CREATE PROCEDURE p2()
+BEGIN 
+SELECT * FROM mensaje where visto='0' ORDER BY f_enviado DESC;
+END//
+
+CREATE PROCEDURE p3() 
+BEGIN 
+SELECT dayname(start), COUNT(DATE(start)), date(start) from cita GROUP BY(DATE(start)); 
+END//

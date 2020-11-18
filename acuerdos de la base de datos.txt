@@ -1,0 +1,12 @@
+Cita
+estatus 
+1 = Asistio
+0 = No asistio 
+
+
+Mensaje
+visto
+0= no respondido
+1= respondido
+
+

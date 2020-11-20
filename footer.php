@@ -1,6 +1,9 @@
-<footer class="page-footer font-small blue pt-4">
+<br><br>
+<footer class="page-footer font-small blue pt-1">
     <div class="container-fluid text-center text-md-left">
         <div class="row">
+
+        <!--
             <div class="col-12 col-md-4 mt-md-0 mt-3">
                 <h6 class="text-uppercase" style="padding-left:100px;">Responsable</h6>
                 <p style="padding-left:100px;">Yazmín Alejandra Nájera Márquez
@@ -34,6 +37,7 @@
                   </ul>
                 </nav>
             </div>
+            -->
         </div>
     </div>
     <div class="footer-copyright text-center py-1"><?php echo date ("Y"); ?> © </div>

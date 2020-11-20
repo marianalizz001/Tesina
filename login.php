@@ -37,7 +37,7 @@
                   <div class="form-group">
                       <input type="password" id="clave" class="form-control" placeholder="Contraseña" name="clave" required>
                   </div>
-                  <button type="submit" class="btn btn-lg btn-dark btn-block">Entrar</button>
+                  <button type="submit" class="btn btn-lg btn-success btn-block">Entrar</button>
                 </form>
               </div>
               <br><br>

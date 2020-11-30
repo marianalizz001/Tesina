@@ -24,7 +24,7 @@
       
     <?php }elseif (isset($_SESSION['usuario']) && ($_SESSION['log'] == true)) { ?>
 <!-- MENU CON LOGIN -->
-    <?php if ($_SESSION['tipo'] == 'N' || $_SESSION['tipo'] == 'E' || $_SESSION['tipo'] == 'P'){ ?>
+    <?php if ($_SESSION['tipo'] == 'N'){ ?>
       <li class="nav-item active" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
         <a class="nav-link" href="Inicio.php"><h5>Inicio</h5><span class="sr-only">(current)</span></a>
       </li>
@@ -35,10 +35,7 @@
 
     <?php } ?>
 
-    <?php if (($_SESSION['tipo'] == 'N') || ($_SESSION['tipo'] == 'E')){ ?>
-      <li class="nav-item active" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
-        <a class="nav-link" href="mensajes.php"><h5>Mensajes</h5><span class="sr-only">(current)</span></a>
-    </li>
+    <?php if (($_SESSION['tipo'] == 'N')){ ?>
       <li class="nav-item dropdown" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:18px;color:white;">
           Citas

@@ -1,3 +1,6 @@
+<!--Footer de toda la pagina
+    Se debe incluir en todas las paginas
+-->
 <br><br>
 <footer class="page-footer font-small blue pt-1">
     <div class="container-fluid text-center text-md-left">
@@ -40,5 +43,5 @@
             -->
         </div>
     </div>
-    <div class="footer-copyright text-center py-1"><?php echo date ("Y"); ?> © </div>
+    <div class="footer-copyright text-center py-1">Mariana y Karen <?php echo date ("Y"); ?> © </div>
 </footer>

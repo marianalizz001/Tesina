@@ -21,6 +21,7 @@
             <div class="row">
                 <div class="col-6">
                 <?php
+                /*
                     require __DIR__ . '/vendor/autoload.php';
 
                    /* if (php_sapi_name() != 'cli') {
@@ -30,7 +31,7 @@
                     /**
                      * Returns an authorized API client.
                      * @return Google_Client the authorized client object
-                     */
+                     *//*
                     function getClient()
                     {
                         $client = new Google_Client();
@@ -107,9 +108,9 @@
                             }
                             printf("%s (%s)\n", $event->getSummary(), $start);
                         }
-                    }
+                    }*/
                     ?>
-                    <!--<form action="EventosAgregar.php"  method="POST  enctype="multipart/form-data">
+                    <form action="EventosAgregar.php"  method="POST  enctype="multipart/form-data">
                     <div class="form-group row">
                             <div class="col-6">
                             <input type="hidden" value="" name="idUsuario" id="idUsuario" >
@@ -119,7 +120,7 @@
                                <select class="form-control" name="nom_paciente" id="txtNombre">
                             <option value="Nuevo paciente"></option>
                             <?php
-                            /*Recupera el nombre de los pacientes
+                            //Recupera el nombre de los pacientes
                             include ('Conexion.php');
                            $consulta = $bd->Usuario->find([
                             'tipo_usuario' => 'P'
@@ -132,7 +133,7 @@
                                 echo '<option value="'.$nombre. " " .$apPat. " " .$apMat.'">'.$nombre. " " .$apPat. " " .$apMat.'</option>';
 
                               }
-                              */
+                              
                             ?>           
                             </select>
                             </div>
@@ -184,7 +185,7 @@
                         <br><br>
                         <input class="btn btn-success btn-lg btn-block" type="submit" value="Agendar Cita" name="btnEnviar">
                      
-                    </form>-->
+                    </form>
                     
                 </div>
                 <div class="col-6">

@@ -9,7 +9,7 @@
 
     $consulta = $bd->Usuario->updateOne(
         ['_id' => new \MongoDB\BSON\ObjectID($idUsuario)],
-        ['$set' => ['AntecedentesHeredoFamiliares' => $var_json]]
+        ['$set' => ['AntecedentesPersonalesNoPatológicos' => $var_json]]
     );
 
     if ($consulta->getModifiedCount() > 0) {

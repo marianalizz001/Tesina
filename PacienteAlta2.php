@@ -18,10 +18,42 @@
 
     <?php include("navbar.php"); ?>
     <br>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+    
+    function habilitar(radio){
+        if (radio == 1)
+            document.getElementById("alergias").style.visibility = "visible";
+        if (radio == 2)
+            document.getElementById("alergias").style.visibility = "hidden";
+        if (radio == 3)
+            document.getElementById("cardiologicas").style.visibility = "visible";
+        if (radio == 4)
+            document.getElementById("cardiologicas").style.visibility = "hidden";
+        if (radio == 5)
+            document.getElementById("hipertension").style.visibility = "visible";
+        if (radio == 6)
+            document.getElementById("hipertension").style.visibility = "hidden";
+        if (radio == 7)
+            document.getElementById("oncologicas").style.visibility = "visible";
+        if (radio == 8)
+            document.getElementById("oncologicas").style.visibility = "hidden";
+        if (radio == 9)
+            document.getElementById("diabetes").style.visibility = "visible";
+        if (radio == 10)
+            document.getElementById("diabetes").style.visibility = "hidden";
+
+    }
+
+    </script>
+
   </head>
 
 <body>
     <br><br>
+    <div class="container">
+    <form action="PacienteAltaPHP2.php" method="post">
     <?php
         $user = $_REQUEST['usuario'];
 
@@ -33,55 +65,107 @@
             }
         }
     ?>
-
-    <div class="container">
-    <form action="PacienteAltaPHP2.php" method="post" enctype="multipart/form-data">
-        <p class="h4"> Nuevo Paciente - <small>Datos Personales</small></p>
+    <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
+        <p class="h4"> Nuevo Paciente - <small>Antecedentes Heredo Familiares</small></p>
         <hr>
+        ¿Alguno de sus Padres, Abuelos o Hermanos padece alguno de los siguientes? SI/NO, ¿Quién?<br><br>
         <div class="form-row">
-            <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
-    
-            <div class="form-group col-sm-6 col-md-8">
-                <label for="usuario" style="font-size:20px;color: rgba(144, 12, 52);"> Referido por: </label>
-                <input type="text" class="form-control" id="referido" name="referido">
+            <div class="form-group col-sm-6 col-md-3">
+                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Alergias </label><br>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="alergias" value="Si" onclick="habilitar(1)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="alergias" value="No" onclick="habilitar(2)" checked>
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
             </div>
 
-            <div class="form-group col-sm-6 col-md-4">
-                <label for="usuario" style="font-size:20px;color: rgba(144, 12, 52);"> Última consulta dental: </label>
-                <input type="date" class="form-control" id="ultima_consulta" name="ultima_consulta" min="1930-01-01" max="2020-07-03"required>
-            </div>
-
-            <div class="form-group col-sm-6 col-md-12">
-                <label for="passwd" style="font-size:20px;color: rgba(144, 12, 52);"> Motivo de consulta: </label>
-                <input type="text" class="form-control" id="mot_consulta" name="mot_consulta" required>
-            </div>
-
-        </div>
-
-        <div class="form-row mt-2">
-        <div class="col-12"><p class="h4"><small> Contacto de Emergencia </small></h4><br></div>
-            <div class="form-group col-sm-6 col-md-3 mt-2">
-                <label for="nombre" style="font-size:20px;color: rgba(144, 12, 52);"> Nombre: </label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
-            </div>
-
-            <div class="form-group col-sm-6 col-md-3 mt-2">
-                <label for="apPat" style="font-size:20px;color: rgba(144, 12, 52);"> Apellido Paterno: </label>
-                <input type="text" class="form-control" id="apPat" name="apPat" required>
-            </div>
-
-            <div class="form-group col-sm-6 col-md-3 mt-2">
-                <label for="apMat" style="font-size:20px;color: rgba(144, 12, 52);"> Apellido Materno: </label>
-                <input type="text" class="form-control" id="apMat" name="apMat">
-            </div>
-
-            <div class="form-group col-sm-12 col-md-3 mt-2">
-                <label for="telefono" style="font-size:20px;color: rgba(144, 12, 52);"> Teléfono: </label>
-                <input type="tel" pattern="[0-9]{10}" class="form-control" id="telefono" name="telefono" required>
+            <div class="form-group col-sm-6 col-md-8" style="visibility: hidden;" id="alergias">
+                <label for="quien" style="font-size:20px;color: rgba(144, 12, 52);">¿Quién?</label><br>
+                <input type="text" name="alergias_q" style="width: 400px;">
             </div>
         </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-3">
+                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Enfermedades Cardiológicas </label><br>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="cardiologicas" value="Si" onclick="habilitar(3)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="cardiologicas" value="No" onclick="habilitar(4)" checked>
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-8" style="visibility: hidden;" id="cardiologicas">
+                <label for="quien" style="font-size:20px;color: rgba(144, 12, 52);">¿Quién?</label><br>
+                <input type="text" name="cardiologicas_q" style="width: 400px;">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-3">
+                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Hipertensión Arterial </label><br>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="hipertension" value="Si" onclick="habilitar(5)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="hipertension" value="No" onclick="habilitar(6)" checked>
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-8" style="visibility: hidden;" id="hipertension">
+                <label for="quien" style="font-size:20px;color: rgba(144, 12, 52);">¿Quién?</label><br>
+                <input type="text" name="hipertension_q" style="width: 400px;">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-3">
+                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Enfermedades Oncológicas </label><br>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="oncologicas" value="Si" onclick="habilitar(7)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="oncologicas" value="No" onclick="habilitar(8)" checked>
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-8" style="visibility: hidden;" id="oncologicas">
+                <label for="quien" style="font-size:20px;color: rgba(144, 12, 52);">¿Quién?</label><br>
+                <input type="text" name="oncologicas_q" style="width: 400px;">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-3">
+                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Diabetes </label><br>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="diabetes" value="Si" onclick="habilitar(9)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="diabetes" value="No" onclick="habilitar(10)" checked>
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-8" style="visibility: hidden;" id="diabetes">
+                <label for="quien" style="font-size:20px;color: rgba(144, 12, 52);">¿Quién?</label><br>
+                <input type="text" name="diabetes_q" style="width: 400px;">
+            </div>
+        </div>
+
         <br>
-        <div class="text-center">
+        <div class="col-12 text-center">
             <input  class = "btn btn-success" type="submit" value="Siguiente" name = "btnEnviar">
         </div>
         <br>
@@ -89,5 +173,6 @@
 </div>
 </body>
 </html>
+
 <?php include("footer.php"); ?>
 

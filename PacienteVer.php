@@ -44,13 +44,19 @@ $(document).ready(function () {
 
 </head>
 <body>
-<div class="col-sm-12 col-md-4" style="float: right !important;">
-      <div class="input-group" style="margin-top:20px; padding-bottom:10px;">
-        <span class="input-group-addon">Buscar&nbsp;&nbsp;</span>
-        <input id="filtrar" type="text" class="form-control" placeholder="">
-      </div>
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-sm-6 " style="margin-top:20px; padding-bottom:10px;">
+            <a class="btn rounded" href="PacienteAlta.php"><span class="text"><i class="fa fa-plus-square" aria-hidden="true"></i>   Nuevo Paciente</span></a>
+        </div>
+        <div class="col-sm-6 col-sm-3 input-group" style="important!; margin-top:20px; padding-bottom:10px;">
+<span class="input-group-addon" style="margin-top:10px;">Buscar&nbsp;&nbsp;</span>
+            <input id="filtrar" type="text" class="form-control" placeholder="">
+        </div>
     </div>
 </div>
+
 
 
 <div class="table-responsive">

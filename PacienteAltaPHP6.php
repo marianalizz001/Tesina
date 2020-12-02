@@ -13,7 +13,7 @@
     );
 
     if ($consulta->getModifiedCount() > 0) {
-        header('location: PacienteAlta7.php?idUsuario='.$idUsuario.'');
+        header('location: PacienteAlta6.php?idUsuario='.$idUsuario.'');
     } else {
         echo "<script language=JavaScript>alert('Hubo un error');</script>";
     }

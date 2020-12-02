@@ -24,19 +24,20 @@
     <br><br>
     <div class="container">
     <form action="PacienteAltaPHP.php" method="post" enctype="multipart/form-data">
-        <p class="h4"> Nuevo Paciente - <small>Datos Generales</small></p>
+        <p class="h4"> Nuevo Paciente - <small>Datos Personales</small></p>
         <hr>
+        
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-4">
                 <label for="usuario" style="font-size:20px;color: rgba(144, 12, 52);"> Usuario: </label>
                 <input type="text" class="form-control" id="usuario" name="usuario" required>
             </div>
-
+<!--
             <div class="form-group col-sm-6 col-md-4">
                 <label for="passwd" style="font-size:20px;color: rgba(144, 12, 52);"> Contraseña: </label>
                 <input type="password" class="form-control" id="passwd" name="passwd" required>
             </div>
-
+-->
             <div class="form-group col-sm-6 col-md-4">
                 <label for="genero" style="font-size:20px;color: rgba(144, 12, 52);"> Género: </label><br>
                 <div class="form-check-inline">
@@ -53,7 +54,7 @@
 
         <div class="form-row mt-2">
             <div class="form-group col-sm-6 col-md-4">
-                <label for="nombre" style="font-size:20px;color: rgba(144, 12, 52);"> Nombre: </label>
+                <label for="nombre" style="font-size:20px;color: rgba(144, 12, 52);"> Nombre(s): </label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
 
@@ -68,7 +69,7 @@
             </div>
 
         </div>
-
+        
         <div class="form-row mt-3">
             <div class="form-group col-sm-12 col-md-4">
                 <label for="correo" style="font-size:20px;color: rgba(144, 12, 52);"> Correo: </label>
@@ -85,7 +86,8 @@
                 <input type="date" class="form-control" id="f_nac" name="f_nac"  min="1930-01-01" max="2018-01-01" required>
             </div>
         </div>
-
+        <p class="h4"> Nuevo Paciente - <small>Dirección</small></p>
+        <hr>
         <div class="form-row mt-3">
             <div class="form-group col-sm-6 col-md-4">
                 <label for="fraccionamiento" style="font-size:20px;color: rgba(144, 12, 52);"> Fraccionamiento: </label>
@@ -108,18 +110,6 @@
             </div>
         </div>
 
-        <div class="form-row mt-3">
-            <div class="form-group col-sm-12 col-md-6">
-                <label for="no_int" style="font-size:20px;color: rgba(144, 12, 52);"> Fotografía: </label>
-                <input type="file" class="form-control" id="foto" name="archivo">
-            </div>
-
-            <div class="form-group col-sm-12 col-md-6">
-                <label for="no_int" style="font-size:20px;color: rgba(144, 12, 52);"> RFC: </label>
-                <input type="text" class="form-control" id="rfc" name="rfc">
-            </div>
-
-        </div>
         <br>
         <div class="text-center">
             <input  class = "btn btn-success" type="submit" value="Siguiente" name = "btnEnviar">

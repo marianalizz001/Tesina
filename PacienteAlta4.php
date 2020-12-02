@@ -23,34 +23,70 @@
     <script type="text/javascript">
     
     function habilitar(radio){
+        if (radio == 1)
+            document.getElementById("hospitalizado").style.visibility = "visible";
+        if (radio == 2)
+            document.getElementById("hospitalizado").style.visibility = "hidden";
+        if (radio == 3)
+            document.getElementById("tratamiento").style.visibility = "visible";
+        if (radio == 4)
+            document.getElementById("tratamiento").style.visibility = "hidden";
         if (radio == 5)
-            document.getElementById("cepillar_dientes").style.visibility = "visible";
+            document.getElementById("anestesia").style.visibility = "visible";
         if (radio == 6)
-            document.getElementById("cepillar_dientes").style.visibility = "hidden";
+            document.getElementById("anestesia").style.visibility = "hidden";
+        if (radio == 7)
+            document.getElementById("sangre").style.visibility = "visible";
+        if (radio == 8)
+            document.getElementById("sangre").style.visibility = "hidden";
+        if (radio == 9)
+            document.getElementById("secuela").style.visibility = "visible";
+        if (radio == 10)
+            document.getElementById("secuela").style.visibility = "hidden";
         if (radio == 11)
-            document.getElementById("act_fisica").style.visibility = "visible";
+            document.getElementById("hipertension").style.visibility = "visible";
         if (radio == 12)
-            document.getElementById("act_fisica").style.visibility = "hidden";
+            document.getElementById("hipertension").style.visibility = "hidden";
         if (radio == 13)
-            document.getElementById("drogas").style.visibility = "visible";
+            document.getElementById("corazon").style.visibility = "visible";
         if (radio == 14)
-            document.getElementById("drogas").style.visibility = "hidden";
+            document.getElementById("corazon").style.visibility = "hidden";
         if (radio == 15)
-            document.getElementById("fuma").style.visibility = "visible";
+            document.getElementById("respiratoria").style.visibility = "visible";
         if (radio == 16)
-            document.getElementById("fuma").style.visibility = "hidden";
+            document.getElementById("respiratoria").style.visibility = "hidden";
         if (radio == 17)
-            document.getElementById("alcohol").style.visibility = "visible";
+            document.getElementById("convulsiones").style.visibility = "visible";
         if (radio == 18)
-            document.getElementById("alcohol").style.visibility = "hidden";
+            document.getElementById("convulsiones").style.visibility = "hidden";
         if (radio == 19)
-            document.getElementById("tatuajes").style.visibility = "visible";
+            document.getElementById("hepatitis").style.visibility = "visible";
         if (radio == 20)
-            document.getElementById("tatuajes").style.visibility = "hidden";
+            document.getElementById("hepatitis").style.visibility = "hidden";
+        if (radio == 21)
+            document.getElementById("vih").style.visibility = "visible";
+        if (radio == 22)
+            document.getElementById("vih").style.visibility = "hidden";
         if (radio == 23)
-            document.getElementById("embarazada").style.visibility = "visible";
+            document.getElementById("tuberculosis").style.visibility = "visible";
         if (radio == 24)
-            document.getElementById("embarazada").style.visibility = "hidden";
+            document.getElementById("tuberculosis").style.visibility = "hidden";
+        if (radio == 25)
+            document.getElementById("rinones").style.visibility = "visible";
+        if (radio == 26)
+            document.getElementById("rinones").style.visibility = "hidden";
+        if (radio == 27)
+            document.getElementById("nomencionada").style.visibility = "visible";
+        if (radio == 28)
+            document.getElementById("nomencionada").style.visibility = "hidden";
+        if (radio == 29)
+            document.getElementById("transfusion").style.visibility = "visible";
+        if (radio == 30)
+            document.getElementById("transfusion").style.visibility = "hidden";
+        if (radio == 31)
+            document.getElementById("medicamento").style.visibility = "visible";
+        if (radio == 32)
+            document.getElementById("medicamento").style.visibility = "hidden";
     }
     </script>
 
@@ -59,266 +95,359 @@
 <body>
     <br><br>
     <div class="container">
-    <form action="PacienteAltaPHP4.php" method="post" enctype="multipart/form-data">
+    <form action="PacienteAltaPHP5.php" method="post" enctype="multipart/form-data">
         <?php $idUsuario = $_REQUEST['idUsuario']; ?>
         <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
-        <p class="h4"> Nuevo Paciente - <small>Antecedentes Personales NO Patológicos</small></p>
+        <p class="h4"> Nuevo Paciente - <small>Antecedentes Personales Patológicos</small></p>
         <hr>
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Cuanta su hogar con todos los servicios básicos de urbanidad? </p><br>
+                <p class="h5"> ¿Ha sido hospitalizado o intervenido quirúrgicamente? </p><br>
             </div>
             <div class="form-group col-sm-6 col-md-2">
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="servicios_basicos" value="Si">
+                    <input class="form-check-input" type="radio" name="hospitalizado" value="S" onclick="habilitar(1)">
                     <label class="form-check-label" for="exampleRadios1"> Si </label>
                 </div>
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="servicios_basicos" value="No" checked>
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Su baño personal es diario? </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="bano_personal" value="Si" >
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="bano_personal" value="No" checked >
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Cepilla sus dientes <small>(Veces por día)</small>? </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="cepillar_dientes" value="Si" onclick="habilitar(5)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="cepillar_dientes" value="No" checked onclick="habilitar(6)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="cepillar_dientes">
-                <label for="quien">Especifique</label>
-                <input type="text" name="cepillar_dientes_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Utiliza enjuague bucal? </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="enjuage_bucal" value="Si" >
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="enjuage_bucal" value="No" checked>
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Utiliza hilo dental? </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="hilo_dental" value="Si" >
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="hilo_dental" value="No" checked >
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Realiza actividad física? <small>(Horas por semana)</small></p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="act_fisica" value="Si" onclick="habilitar(11)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="act_fisica" value="No" checked onclick="habilitar(12)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="act_fisica">
-                <label for="quien">Especifique</label>
-                <input type="text" name="act_fisica_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Ha consumido o consume drogas? <small>(Cuál)</small> </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="drogas" value="Si" onclick="habilitar(13)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="drogas" value="No" checked onclick="habilitar(14)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="drogas">
-                <label for="quien">Especifique</label>
-                <input type="text" name="drogras_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Fuma? <small>(Cigarrillos por día)</small> </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="fuma" value="Si" onclick="habilitar(15)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="fuma" value="No" checked onclick="habilitar(16)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="fuma">
-                <label for="quien">Especifique</label>
-                <input type="text" name="fuma_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Consume bebidas alcohólicas? <small>(Frecuencia y Cantidad)</small> </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="alcohol" value="Si" onclick="habilitar(17)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="alcohol" value="No" checked onclick="habilitar(18)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="alcohol">
-                <label for="quien">Especifique</label>
-                <input type="text" name="alcohol_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Tatuajes?</p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="tatuajes" value="Si" onclick="habilitar(19)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="tatuajes" value="No" checked onclick="habilitar(20)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="tatuajes">
-                <label for="quien">¿Cuántos?</label>
-                <input type="text" name="tatuajes_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Esquema de inmunización completo? </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="vacunas" value="Si" >
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="vacunas" value="No" checked >
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Está embarazada? <small>(Semanas)</small> </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="embarazada" value="Si" onclick="habilitar(23)">
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="embarazada" value="No" checked onclick="habilitar(24)">
-                    <label class="form-check-label" for="exampleRadios2"> No </label>
-                </div>
-            </div>
-            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="embarazada">
-                <label for="quien">Especifique</label>
-                <input type="text" name="embarazada_esp">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Está amamantando? </p><br>
-            </div>
-            <div class="form-group col-sm-6 col-md-2">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="amamantando" value="Si" >
-                    <label class="form-check-label" for="exampleRadios1"> Si </label>
-                </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="amamantando" value="No" checked>
+                    <input class="form-check-input" type="radio" name="hospitalizado" value="N" checked  onclick="habilitar(2)">
                     <label class="form-check-label" for="exampleRadios2"> No </label>
                 </div>
             </div>
             
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="hospitalizado">
+                <label for="quien">Especifique</label>
+                <input type="text" name="hospitalizado_esp" name="_esp">
+            </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-7">
-                <p class="h5"> ¿Uso de anticonceptivos?</p><br>
+                <p class="h5"> ¿Se encuentra bajo algún tratamiento médico? </p><br>
             </div>
             <div class="form-group col-sm-6 col-md-2">
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="anticonceptivos" value="Si">
+                    <input class="form-check-input" type="radio" name="tratamiento" value="S" onclick="habilitar(3)">
                     <label class="form-check-label" for="exampleRadios1"> Si </label>
                 </div>
                 <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="anticonceptivos" value="No" checked >
+                    <input class="form-check-input" type="radio" name="tratamiento" value="N" checked  onclick="habilitar(4)">
                     <label class="form-check-label" for="exampleRadios2"> No </label>
                 </div>
             </div>
-        </div>    
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="tratamiento">
+                <label for="quien">Especifique</label>
+                <input type="text" name="tratamiento_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Alergia a alguna sustancia, anestesia o medicamento? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="anestesia" value="S" onclick="habilitar(5)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="anestesia" value="N" checked  onclick="habilitar(6)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="anestesia">
+                <label for="quien">Especifique</label>
+                <input type="text" name="anestesia_esp">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5">¿Sufre de intolerancia a la lactosa? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="intolerancia" value="S">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="intolerancia" value="N" checked >
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece enfermedades de la sangre? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="sangre" value="S" onclick="habilitar(7)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="sangre" value="N" checked  onclick="habilitar(8)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="sangre">
+                <label for="quien">Especifique</label>
+                <input type="text" name="sangre_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Algún golpe que le haya dejado una secuela? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="secuela" value="S" onclick="habilitar(9)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="secuela" value="N"  checked onclick="habilitar(10)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="secuela">
+                <label for="quien">Especifique</label>
+                <input type="text" name="secuela_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece hipo/hipertensión arterial?</p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="hipertension" value="S" onclick="habilitar(11)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="hipertension" value="N" checked  onclick="habilitar(12)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="hipertension">
+                <label for="quien">Especifique</label>
+                <input type="text" name="hipertension_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece alguna enfermedad del corazón? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="corazon" value="S" onclick="habilitar(13)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="corazon" value="N"  checked onclick="habilitar(14)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="corazon">
+                <label for="quien">Especifique</label>
+                <input type="text" name="corazon_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece alguna enfermedad respiratoria? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="respiratoria" value="S" onclick="habilitar(15)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="respiratoria" value="N"  checked onclick="habilitar(16)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="respiratoria">
+                <label for="quien">Especifique</label>
+                <input type="text" name="respiratoria_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece convulsiones?</p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="convulsiones" value="S" onclick="habilitar(17)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="convulsiones" value="N" checked  onclick="habilitar(18)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="convulsiones">
+                <label for="quien">Especifique</label>
+                <input type="text" name="convulsiones_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece hepatitis?</p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="hepatitis" value="S" onclick="habilitar(19)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="hepatitis" value="N"  checked onclick="habilitar(20)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="hepatitis">
+                <label for="quien">Especifique</label>
+                <input type="text" name="hepatitis_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece de VIH/SIDA?</p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="vih" value="S" onclick="habilitar(21)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="vih" value="N" checked  onclick="habilitar(22)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="vih">
+                <label for="quien">Especifique</label>
+                <input type="text" name="vih_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece tuberculosis? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="tuberculosis" value="S" onclick="habilitar(23)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="tuberculosis" value="N" checked  onclick="habilitar(24)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="tuberculosis">
+                <label for="quien">Especifique</label>
+                <input type="text" name="tuberculosis_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece alguna enfermedad en los riñores?  </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="rinones" value="S" onclick="habilitar(25)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="rinones" value="N" checked  onclick="habilitar(26)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="rinones">
+                <label for="quien">Especifique</label>
+                <input type="text" name="rinones_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Padece otra enfermedad no mencionada? </p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="nomencionada" value="S" onclick="habilitar(27)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="nomencionada" value="N"  checked onclick="habilitar(28)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="nomencionada">
+                <label for="quien">Especifique</label>
+                <input type="text" name="nomencionada_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Ha necesitado alguna transfusión sanguínea?</p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="transfusion" value="S" onclick="habilitar(29)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="transfusion" value="N"  checked onclick="habilitar(30)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="transfusion">
+                <label for="quien">Especifique</label>
+                <input type="text" name="transfusion_esp">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-7">
+                <p class="h5"> ¿Está tomando algún medicamento?</p><br>
+            </div>
+            <div class="form-group col-sm-6 col-md-2">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="medicamento" value="S" onclick="habilitar(31)">
+                    <label class="form-check-label" for="exampleRadios1"> Si </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="medicamento" value="N" checked  onclick="habilitar(32)">
+                    <label class="form-check-label" for="exampleRadios2"> No </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="medicamento">
+                <label for="quien">Especifique</label>
+                <input type="text" name="medicamento_esp">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-6 col-md-12">
+                <p class="h5">*Observaciones:</p><br>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <textarea class="form-control" name="observaciones"  rows="2" style="resize: none;" placeholder="Tratamiento médico lo más específico posible"></textarea>
+            </div>
+        </div>
+        
         <br>
         <div class="col-12 text-center">
-            <input  class = "btn btn-success" type="submit" value="Siguiente" name = "btnEnviar">
+            <input  class = "btn btn-success" type="submit" value="Siguiente" name = "btnEnviar" >
         </div>
         <br>
     </form>

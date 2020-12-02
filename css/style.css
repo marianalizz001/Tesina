@@ -212,7 +212,7 @@ h5 {
 
 footer {
   background: #5D863E;
-  color: black;
+  color: white;
   position: relative;
   left: 0px;
   bottom: 0px;
@@ -242,4 +242,14 @@ footer {
 
 .form-control .ieditar {
   background-color: rgba(85, 219, 183, 0.83);
+}
+
+.btn.rounded {
+  border-radius: 5px;
+  background-color: #5D863E;
+  font-weight: bold;
+}
+.btn.rounded .text {
+  color: white;
+  font-size: 20px;
 }

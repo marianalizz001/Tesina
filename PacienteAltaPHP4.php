@@ -9,12 +9,13 @@
 
     $consulta = $bd->Usuario->updateOne(
         ['_id' => new \MongoDB\BSON\ObjectID($idUsuario)],
-        ['$set' => ['AntecedentesPersonalesNoPatológicos' => $var_json]]
+        ['$set' => ['AntecedentesPersonalesPatológicos' => $var_json]]
     );
 
     if ($consulta->getModifiedCount() > 0) {
         header('location: PacienteAlta5.php?idUsuario='.$idUsuario.'');
     } else {
         echo "<script language=JavaScript>alert('Hubo un error');</script>";
+
     }
 ?>

@@ -64,8 +64,6 @@ $(document).ready(function () {
         <thead class="thead-light">
             <tr>
                 <th></th>
-                <th scope="col"><span><i class="fas fa-camera fa-lg"></i></span></th>
-                <th scope="col">Usuario</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Correo</th>
             </tr>
@@ -75,35 +73,23 @@ $(document).ready(function () {
         <?php
             include ('Conexion.php');
 
-            $consulta = $bd->Usuario->find(
+            $consulta = $bd->Paciente->find(
                 [
-                    'tipo_usuario' => 'P',
                     'f_baja' => array('$exists' => false)
                 ]
             );
 
             foreach ($consulta as $act){
                 $idUsuario = $act['_id'];
-                $usuario = $act['usuario'];
                 $nombre = $act['nombre'];
                 $apPat = $act['apPat'];
                 $apMat = $act['apMat'];
                 $correo = $act['correo'];
-                $foto = "Usuarios/Fotos/".$act['foto'];
     
                     echo'
                     <td>    
                       <a href="PacienteEditar.php?idUsuario='.$idUsuario.'"><img src="img/editar.webp" width="25" height="25"></a>
                       <a href="UsuarioBorrar.php?idUsuario='.$idUsuario.'"><img src="img/borrar.png" width="25" height="25"></a>
-                    <td>';
-                        if ($foto == "Usuarios/Fotos/"){
-                            echo '<img src="img/perfil.png" width="80" height="80">';
-                        }
-                        else{
-                            echo '<img src=' .$foto.' width="80" height="80">';
-                        }
-                        echo '</td>
-                        <td>' .$usuario.'</td>
                         <td>' .$nombre. " " .$apPat. " " .$apMat.'</td>
                         <td>' .$correo. '</td>
                     </tr>';                

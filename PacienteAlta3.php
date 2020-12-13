@@ -316,7 +316,7 @@
                 <p class="h5">Método Anticonceptivo</p><br>
                 </div>
             <div class="form-group col-sm-6 col-md-3">
-                <select id="metodo" class="form-control">
+                <select id="metodo" class="form-control" name="metodo_anticonceptivo">
                     <option selected>Selecciona</option>
                     <option>Pildoras</option>
                     <option>Condón</option>

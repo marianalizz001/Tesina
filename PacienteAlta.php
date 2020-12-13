@@ -28,11 +28,12 @@
         <hr>
         
         <div class="form-row">
+        <!--
             <div class="form-group col-sm-6 col-md-4">
                 <label for="usuario" style="font-size:20px;color: rgba(144, 12, 52);"> Usuario: </label>
                 <input type="text" class="form-control" id="usuario" name="usuario" required>
             </div>
-<!--
+
             <div class="form-group col-sm-6 col-md-4">
                 <label for="passwd" style="font-size:20px;color: rgba(144, 12, 52);"> Contraseña: </label>
                 <input type="password" class="form-control" id="passwd" name="passwd" required>
@@ -100,12 +101,12 @@
             </div>
 
             <div class="form-group col-sm-12 col-md-2">
-                <label for="calle" style="font-size:20px;color: rgba(144, 12, 52);"> No.Ext: </label>
+                <label for="no_ext" style="font-size:20px;color: rgba(144, 12, 52);"> No.Ext: </label>
                 <input type="text" class="form-control" id="no_ext" name="no_ext" required>
             </div>
 
             <div class="form-group col-sm-12 col-md-2">
-                <label for="no_int" style="font-size:20px;color: rgba(144, 12, 52);"> Cp: </label>
+                <label for="cp" style="font-size:20px;color: rgba(144, 12, 52);"> Cp: </label>
                 <input type="number" class="form-control" id="cp" name="cp" required>
             </div>
         </div>

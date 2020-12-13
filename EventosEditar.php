@@ -39,7 +39,7 @@
             <br><br>
             <div class="row">
                 <div class="col-6">
-                    <form action="EventosEditarPHP.php"  method="POST  enctype="multipart/form-data">
+                    <form action="EventosEditarPHP.php"  method="POST"  enctype="multipart/form-data">
                     <div class="form-group row">
                             <div class="col-6">
                             <input type="hidden" value="<?php echo $_SESSION['id'];?>" name="idUsuario" id="idUsuario" >
@@ -76,33 +76,17 @@
                                 <label for="hora" style="font-size:20px;color: rgba(144, 12, 52);"> Hora de la cita: </label>
                             </div>
                             <div class="col-6">
-                            <select class="form-control" name="txtHora" id="txtHora" required>
-                                <option>10:00:00</option>
-                                <option>11:00:00</option>
-                                <option>16:00:00</option>
-                                <option>17:00:00</option>
-                                <option>18:00:00</option>
-                                <option>19:00:00</option>
-                            </select>
-
+                            <input type="time" class="form-control" name="txtHora" id="txtHora" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-6">
-                                <label for="titulo" style="font-size:20px;color: rgba(144, 12, 52);"> Servicios: </label>
+                                <label for="titulo" style="font-size:20px;color: rgba(144, 12, 52);"> Tipo de Cita: </label>
                             </div>
                             <div class="col-6">
                             <select class="form-control" name="txtTitulo" id="txtHora" required >
-                            <option>Ortodoncia</option>
-                            <option>Protesis</option>
-                            <option>Estetica dental</option>
-                            <option>Higiene</option>
-                            <option>Prevencion</option>
-                            <option>Odontopediatria</option>
-                            <option>Endodoncia</option>
-                            <option>Peridoncia</option>
-                            <option>Cirugia dental</option>
-                            <option>Otros</option>
+                            <option>Primera Cita</option>
+                            <option>Seguimiento</option>
                         </select>
 
                             </div>

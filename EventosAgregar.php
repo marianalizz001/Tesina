@@ -10,7 +10,11 @@
 
 	$idUsuario= $_SESSION['id'];
 	//echo $idUsuario;
-    $Nombre = $_REQUEST['nom_paciente'];
+	if($_REQUEST['nom_paciente']==""){
+		$Nombre = $_REQUEST['nombre'];
+	}else{
+		$Nombre = $_REQUEST['nom_paciente'];
+	}
 	//echo $Nombre;
 	$Fecha=$_REQUEST['fecha_cita'];
 	//echo $Fecha;
@@ -23,35 +27,11 @@
 	$Fecha_Final = $Fecha." ".$Hora;
 	//echo $Fecha_Final;
 
-	if ( $Titulo == "Ortodoncia"){
+	if ( $Titulo == "Primera Cita"){
 		$color="#0080ff";
 	 }
-	 if ( $Titulo == "Protesis"){
+	 if ( $Titulo == "Seguimiento"){
 		$color="#ff8000";
-	 }
-	 if ( $Titulo == "Estetica dental"){
-		$color="#ce00ce";
-	 }
-	 if ( $Titulo == "Higiene"){
-		$color="#00df52";
-	 }
-	 if ( $Titulo == "Prevencion"){
-		$color="#004080";
-	 }
-	 if ( $Titulo == "Odontopediatria"){
-		$color="#d5006b";
-	 }
-	 if (	$Titulo == "Endodoncia"){
-		$color="#ff0606";
-	 }
-	 if ( $Titulo == "Peridoncia"){
-		$color="#1B743A";
-	 }
-	 if ( $Titulo == "Cirugia dental"){
-		$color="#a80b0b";
-	 }
-	 if ( $Titulo == "Otros"){
-		$color="#000000";
 	 }
 
 	 $TextColor="#FFFFFF";
@@ -84,7 +64,6 @@
 			'end' => $Fecha_Final,
 			'estatus' => NULL,
 			'odontograma' => NULL,
-			'Usuario_idUsuario' => $idUsuario
 	   ]);
 		if($consulta->getInsertedCount() > 0){
 			?>

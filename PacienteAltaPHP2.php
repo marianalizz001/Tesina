@@ -5,11 +5,12 @@
 
     unset($_POST['btnEnviar']);
     unset($_POST['idUsuario']);
+    $titulo->parte = "Antecedentes Heredo Familiares";
     $var_json = json_encode($_POST);
 
-    $consulta = $bd->Usuario->updateOne(
+    $consulta = $bd->Paciente->updateOne(
         ['_id' => new \MongoDB\BSON\ObjectID($idUsuario)],
-        ['$set' => ['AntecedentesHeredoFamiliares' => $var_json]]
+        ['$set' => ['HistorialClinico' => ['AntecedentesHeredoFamiliares' => $var_json]]]
     );
 
     if ($consulta->getModifiedCount() > 0) {

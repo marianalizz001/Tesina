@@ -48,10 +48,9 @@ $(document).ready(function () {
     <table class="table table-hover">
         <thead class="thead-light">
             <tr>
-                <th></th>
                 <th scope="col">Opciones</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Servicio</th>
+                <th scope="col">Tipo de Cita</th>
                 <th scope="col">Fecha/Hora</th>
             </tr>
         </thead>
@@ -59,11 +58,10 @@ $(document).ready(function () {
 
         <?php
             include ('Conexion.php');
-
-            $consulta = $bd->Cita->find(
-                [
-                ]
-            );
+            date_default_timezone_set('America/Mexico_City');
+            $consulta = $bd->Cita->find(array(
+                'start' => array('$gte' => date ( "Y-m-d" ))
+            ));
 
             foreach ($consulta as $act){
                 $id = $act['_id'];
@@ -78,8 +76,8 @@ $(document).ready(function () {
                     <td>    
                       <a href="EventosEditar.php?id='.$id.'"><img src="img/editar.webp" width="25" height="25"></a>
                       <a href="EliminarCitaPHP.php?id='.$id.'"><img src="img/borrar.png" width="25" height="25"></a>
-                    <td>';
-                        echo '</td>
+                    </td>';
+                        echo '
                         <td>' .$nombre.'</td>
                         <td>' .$title.'</td>
                         <td>' .$start. '</td>

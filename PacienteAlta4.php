@@ -95,7 +95,7 @@
 <body>
     <br><br>
     <div class="container">
-    <form action="PacienteAltaPHP5.php" method="post" enctype="multipart/form-data">
+    <form action="PacienteAltaPHP4.php" method="post" enctype="multipart/form-data">
         <?php $idUsuario = $_REQUEST['idUsuario']; ?>
         <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
         <p class="h4"> Nuevo Paciente - <small>Antecedentes Personales Patológicos</small></p>

@@ -55,12 +55,12 @@
     <div class="container">
     <form action="PacienteAltaPHP2.php" method="post">
     <?php
-        $user = $_REQUEST['usuario'];
+        $user = $_REQUEST['correo'];
 
-        $cursor = $bd->Usuario->find();
+        $cursor = $bd->Paciente->find();
 
         foreach ($cursor as $usuario) {
-            if ($usuario['usuario'] ==  $user){
+            if ($usuario['correo'] ==  $user){
                 $idUsuario = $usuario['_id'];
             }
         }
@@ -90,7 +90,7 @@
 
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-3">
-                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Enfermedades Cardiológicas </label><br>
+                <label for="enfer_cardio" style="font-size:20px;color: rgba(144, 12, 52);"> Enfermedades Cardiológicas </label><br>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="cardiologicas" value="Si" onclick="habilitar(3)">
                     <label class="form-check-label" for="exampleRadios1"> Si </label>
@@ -109,7 +109,7 @@
 
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-3">
-                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Hipertensión Arterial </label><br>
+                <label for="hipertension" style="font-size:20px;color: rgba(144, 12, 52);"> Hipertensión Arterial </label><br>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="hipertension" value="Si" onclick="habilitar(5)">
                     <label class="form-check-label" for="exampleRadios1"> Si </label>
@@ -128,7 +128,7 @@
 
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-3">
-                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Enfermedades Oncológicas </label><br>
+                <label for="enfer_onco" style="font-size:20px;color: rgba(144, 12, 52);"> Enfermedades Oncológicas </label><br>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="oncologicas" value="Si" onclick="habilitar(7)">
                     <label class="form-check-label" for="exampleRadios1"> Si </label>
@@ -147,7 +147,7 @@
 
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-3">
-                <label for="alergias" style="font-size:20px;color: rgba(144, 12, 52);"> Diabetes </label><br>
+                <label for="diabetes" style="font-size:20px;color: rgba(144, 12, 52);"> Diabetes </label><br>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="diabetes" value="Si" onclick="habilitar(9)">
                     <label class="form-check-label" for="exampleRadios1"> Si </label>

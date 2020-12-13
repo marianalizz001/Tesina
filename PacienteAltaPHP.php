@@ -1,6 +1,5 @@
 <?php
     include("Conexion.php");
-    $usuario = $_REQUEST['usuario'];
     $genero = $_REQUEST['genero'];
     $f_nac = $_REQUEST['f_nac'];
     $nombre = $_REQUEST['nombre'];
@@ -15,7 +14,6 @@
     
     $consulta = $bd->Paciente->insertOne(
         [
-            'usuario' => $usuario,
             'nombre' => $nombre,
             'apPat' => $apPat,
             'apMat' => $apMat,
@@ -33,7 +31,7 @@
     );
     
     if($consulta->getInsertedCount() > 0){
-        header('location: PacienteAlta2.php?pac='.$usuario.'');
+        header('location: PacienteAlta2.php?correo='.$correo.'');
     }else{
         echo $conexion -> error;
         echo "<script language=JavaScript>alert('Hubo un error');</script>";

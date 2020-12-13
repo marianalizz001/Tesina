@@ -7,9 +7,9 @@
     unset($_POST['idUsuario']);
     $var_json = json_encode($_POST);
 
-    $consulta = $bd->Usuario->updateOne(
+    $consulta = $bd->Paciente->updateOne(
         ['_id' => new \MongoDB\BSON\ObjectID($idUsuario)],
-        ['$set' => ['AntecedentesPersonalesPatológicos' => $var_json]]
+        ['$set' => ['HistorialClinico.AntecedentesPersonalesPatológicos' => $var_json]]
     );
 
     if ($consulta->getModifiedCount() > 0) {

@@ -17,7 +17,6 @@
             '_id' => new \MongoDB\BSON\ObjectID($idCita)],
             ['$set' => ['estatus' => '1']
         ],);
-       // $instruccion1=$conexion->prepare("UPDATE cita SET estatus='1' where id=$idCita");
         if($consulta->getModifiedCount() > 0){
             ?>
             <script>
@@ -61,14 +60,11 @@
             <?php
         }
     }elseif($opc=='0'){
-        //$instruccion2=$conexion->prepare("UPDATE cita SET estatus='0' where id=$idCita");
         $consulta2 = $bd->Cita->update([
             '_id' => new \MongoDB\BSON\ObjectID($idCita)],
             ['$set' => ['estatus' => "0"]
             ]);
             if($consulta2->getModifiedCount() == 0){
-            //$instruccion3=$conexion->prepare("INSERT into pagos (cita_idCita,usuario_idUsuario,fecha,monto) values ($idCita,$idUsuario,now(),0)");
-            
             $consulta3 = $bd->Pagos->insertOne(
                 [
                     'Cita_idCita' => $idCita,

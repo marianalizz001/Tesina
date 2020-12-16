@@ -9,32 +9,17 @@
     include ('Conexion.php');
 
 	$idUsuario= $_SESSION['id'];
-	//echo $idUsuario;
 	if($_REQUEST['nom_paciente']==""){
 		$Nombre = $_REQUEST['nombre'];
 	}else{
 		$Nombre = $_REQUEST['nom_paciente'];
 	}
-	//echo $Nombre;
 	$Fecha=$_REQUEST['fecha_cita'];
-	//echo $Fecha;
 	$Hora= $_REQUEST['txtHora'];
-	//echo $Hora;
 	$Titulo= $_REQUEST['txtTitulo'];
-	//echo $Titulo;
 	$Fecha_Inicial = $Fecha." ".$Hora;
-	//echo $Fecha_Inicial;
 	$Fecha_Final = $Fecha." ".$Hora;
-	//echo $Fecha_Final;
 
-	if ( $Titulo == "Primera Cita"){
-		$color="#0080ff";
-	 }
-	 if ( $Titulo == "Seguimiento"){
-		$color="#ff8000";
-	 }
-
-	 $TextColor="#FFFFFF";
 	$consulta2 = $bd->Cita->find([]);
 	$b=0;
 	foreach ($consulta2 as $act){
@@ -46,7 +31,7 @@
 		if($BD==$Fecha_Inicial){
 			$b=1;
 		}
-		if($diaSemana==6 && ($Hora != "10:00:00" || $Hora != "11:00:00") ){
+		if($diaSemana==5){
 			$b=1;
 		}
 		if($diaSemana==0){
@@ -58,12 +43,10 @@
 		$consulta = $bd->Cita->insertOne([
 			'title' => $Titulo,
 			'nombre' => $Nombre,
-			'color' => $color,
-			'textColor' => $TextColor,
 			'start' => $Fecha_Inicial,
 			'end' => $Fecha_Final,
 			'estatus' => NULL,
-			'odontograma' => NULL,
+			'seguimiento' => NULL,
 	   ]);
 		if($consulta->getInsertedCount() > 0){
 			?>
@@ -79,7 +62,7 @@
 
                     function(isConfirm){   
                         if (isConfirm) {     
-                            window.location.href = "javascript:window.history.back()";
+                            window.location.href = "EditarCita.php";
                         }
                     });
             });

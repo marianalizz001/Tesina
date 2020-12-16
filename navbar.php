@@ -37,26 +37,8 @@
         <a class="nav-link" href="PacienteVer.php"><h5>Pacientes</h5><span class="sr-only">(current)</span></a>
       </li>
 
-      <li class="nav-item dropdown" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:18px;color:white;">
-          Citas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="submenu">
-        <a class="dropdown-item" href="Citas.php">Ver</a>
-        <a class="dropdown-item" href="AgregarCita.php">Agendar</a>
-        <a class="dropdown-item" href="EditarCita.php">Editar/Eliminar</a>  
-        </div>
-      </li>
-
-      <li class="nav-item dropdown" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:18px;color:white;">
-          Reportes
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="submenu">
-          <a class="dropdown-item" href="Reportes/MsgContestados.php" target="_blank">Msg Contestados</a>
-          <a class="dropdown-item" href="Reportes/MsgPendientes.php" target="_blank">Msg Pendientes</a>
-          <a class="dropdown-item" href="Reportes/ListadoEmpleados.php" target="_blank">Empleados</a>          
-        </div>
+      <li class="nav-item active" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
+        <a class="nav-link" href="EditarCita.php"><h5>Citas</h5><span class="sr-only">(current)</span></a>
       </li>
 
       <?php } ?>

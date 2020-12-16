@@ -14,17 +14,17 @@
 
     <link rel="stylesheet" href="css/style.css">
      
-    <title>Dra.YazminNajera | Reportes</title>
+    <title>Dra.YazminNajera | Home</title>
 
     <?php include("navbar.php"); ?>
     <br>
   </head>
 
 <body>
-  <div clss="container" id="registro">
-    <iframe class="col-lg-12 col-md-12 col-sm-12" src="Reportes/MensajesContestados.php" height="600"></iframe>'; 
-  </div>
+  <p>Aqui esta la cita</p>
+
 </body>
   
 </html>
 <?php include("footer.php"); ?>
+

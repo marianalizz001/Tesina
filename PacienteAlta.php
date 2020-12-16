@@ -28,17 +28,6 @@
         <hr>
         
         <div class="form-row">
-        <!--
-            <div class="form-group col-sm-6 col-md-4">
-                <label for="usuario" style="font-size:20px;color: rgba(144, 12, 52);"> Usuario: </label>
-                <input type="text" class="form-control" id="usuario" name="usuario" required>
-            </div>
-
-            <div class="form-group col-sm-6 col-md-4">
-                <label for="passwd" style="font-size:20px;color: rgba(144, 12, 52);"> Contraseña: </label>
-                <input type="password" class="form-control" id="passwd" name="passwd" required>
-            </div>
--->
             <div class="form-group col-sm-6 col-md-4">
                 <label for="genero" style="font-size:20px;color: rgba(144, 12, 52);"> Género: </label><br>
                 <div class="form-check-inline">

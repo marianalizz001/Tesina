@@ -86,7 +86,7 @@
                                 <label for="fecha" style="font-size:20px;color: rgba(144, 12, 52);"> Fecha de la cita: </label>
                             </div>
                             <div class="col-6">
-                                <input type="date" class="form-control" name="fecha_cita" id="fecha_cita" min="2019-12-01" required >
+                                <input type="date" class="form-control" name="fecha_cita" id="fecha_cita" min="2020-12-01" required >
                             </div>
                         </div>
                         <div class="form-group row">

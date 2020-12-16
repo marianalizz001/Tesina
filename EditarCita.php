@@ -41,9 +41,30 @@ $(document).ready(function () {
 });
 
 </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+ 
+	<script>
+	$(document).ready(function() {
+		$("a.l1s").click(function(){
+			id = $(this).parents("tr").find("td").eq(0).html();
+			alert(id);
+		});
+	});
+	</script>
 
 </head>
 <body>
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-sm-6 " style="margin-top:20px; padding-bottom:10px;">
+            <a class="btn rounded" href="AgregarCita.php"><span class="text"><i class="fa fa-plus-square" aria-hidden="true"></i>   Nueva Cita</span></a>
+        </div>
+        <div class="col-sm-6 col-sm-3 input-group" style="important!; margin-top:20px; padding-bottom:10px;">
+<span class="input-group-addon" style="margin-top:10px;">Buscar&nbsp;&nbsp;</span>
+            <input id="filtrar" type="text" class="form-control" placeholder="">
+        </div>
+    </div>
+</div>
 <div class="table-responsive">
     <table class="table table-hover">
         <thead class="thead-light">
@@ -65,14 +86,13 @@ $(document).ready(function () {
 
             foreach ($consulta as $act){
                 $id = $act['_id'];
-                $idUsuario = $act['Usuario_idUsuario'];
                 $title = $act['title'];
                 $nombre = $act['nombre'];
-                $color = $act['color'];
                 $start = $act['start'];
                 $estatus = $act['estatus'];
                 if($estatus == NULL || $estatus == 0){
                     echo'
+                    <tr>
                     <td>    
                       <a href="EventosEditar.php?id='.$id.'"><img src="img/editar.webp" width="25" height="25"></a>
                       <a href="EliminarCitaPHP.php?id='.$id.'"><img src="img/borrar.png" width="25" height="25"></a>
@@ -80,8 +100,8 @@ $(document).ready(function () {
                         echo '
                         <td>' .$nombre.'</td>
                         <td>' .$title.'</td>
-                        <td>' .$start. '</td>
-                    </tr>'; 
+                        <td><a href="CitaPHP.php?id='.$id.'">' .$start. '</a></td>
+                        </tr>'; 
                 }      
             }
         ?>            

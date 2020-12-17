@@ -29,7 +29,7 @@
         
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-4">
-                <label for="genero" style="font-size:20px;color: rgba(144, 12, 52);"> Género: </label><br>
+                <label for="genero" style="font-size:20px;color: rgba(152, 37, 6);"> Género: </label><br>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="genero" id="genero" value="F">
                     <label class="form-check-label" for="exampleRadios1"> Femenino </label>
@@ -44,17 +44,17 @@
 
         <div class="form-row mt-2">
             <div class="form-group col-sm-6 col-md-4">
-                <label for="nombre" style="font-size:20px;color: rgba(144, 12, 52);"> Nombre(s): </label>
+                <label for="nombre" style="font-size:20px;color: rgba(152, 37, 6);"> Nombre(s): </label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
 
             <div class="form-group col-sm-6 col-md-4">
-                <label for="apPat" style="font-size:20px;color: rgba(144, 12, 52);"> Apellido Paterno: </label>
+                <label for="apPat" style="font-size:20px;color: rgba(152, 37, 6);"> Apellido Paterno: </label>
                 <input type="text" class="form-control" id="apPat" name="apPat" required>
             </div>
 
             <div class="form-group col-sm-6 col-md-4">
-                <label for="apMat" style="font-size:20px;color: rgba(144, 12, 52);"> Apellido Materno: </label>
+                <label for="apMat" style="font-size:20px;color: rgba(152, 37, 6);"> Apellido Materno: </label>
                 <input type="text" class="form-control" id="apMat" name="apMat">
             </div>
 
@@ -62,17 +62,17 @@
         
         <div class="form-row mt-3">
             <div class="form-group col-sm-12 col-md-4">
-                <label for="correo" style="font-size:20px;color: rgba(144, 12, 52);"> Correo: </label>
+                <label for="correo" style="font-size:20px;color: rgba(152, 37, 6);"> Correo: </label>
                 <input type="email" class="form-control" id="correo" name="correo" required>
             </div>
 
             <div class="form-group col-sm-12 col-md-4">
-                <label for="telefono" style="font-size:20px;color: rgba(144, 12, 52);"> Teléfono: </label>
+                <label for="telefono" style="font-size:20px;color: rgba(152, 37, 6);"> Teléfono: </label>
                 <input type="tel" pattern="[0-9]{10}" class="form-control" id="telefono" name="telefono" required>
             </div>
 
             <div class="form-group col-sm-12 col-md-4">
-                <label for="f_nac" style="font-size:20px;color: rgba(144, 12, 52);"> Fecha Nacimiento: </label>
+                <label for="f_nac" style="font-size:20px;color: rgba(152, 37, 6);"> Fecha Nacimiento: </label>
                 <input type="date" class="form-control" id="f_nac" name="f_nac"  min="1930-01-01" max="2018-01-01" required>
             </div>
         </div>
@@ -80,22 +80,22 @@
         <hr>
         <div class="form-row mt-3">
             <div class="form-group col-sm-6 col-md-4">
-                <label for="fraccionamiento" style="font-size:20px;color: rgba(144, 12, 52);"> Fraccionamiento: </label>
+                <label for="fraccionamiento" style="font-size:20px;color: rgba(152, 37, 6);"> Fraccionamiento: </label>
                 <input type="text" class="form-control" id="colonia" name="colonia" required>
             </div>
 
             <div class="form-group col-sm-12 col-md-4">
-                <label for="calle" style="font-size:20px;color: rgba(144, 12, 52);"> Calle: </label>
+                <label for="calle" style="font-size:20px;color: rgba(152, 37, 6);"> Calle: </label>
                 <input type="text" class="form-control" id="calle" name="calle" required>
             </div>
 
             <div class="form-group col-sm-12 col-md-2">
-                <label for="no_ext" style="font-size:20px;color: rgba(144, 12, 52);"> No.Ext: </label>
+                <label for="no_ext" style="font-size:20px;color: rgba(152, 37, 6);"> No.Ext: </label>
                 <input type="text" class="form-control" id="no_ext" name="no_ext" required>
             </div>
 
             <div class="form-group col-sm-12 col-md-2">
-                <label for="cp" style="font-size:20px;color: rgba(144, 12, 52);"> Cp: </label>
+                <label for="cp" style="font-size:20px;color: rgba(152, 37, 6);"> Cp: </label>
                 <input type="number" class="form-control" id="cp" name="cp" required>
             </div>
         </div>

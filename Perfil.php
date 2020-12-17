@@ -53,31 +53,31 @@
                 <div class="form-row">
                     
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Teléfono: </p>
+                        <p style="font-size:20px;color: rgba(152, 37, 6);">Teléfono: </p>
                         <input type="tel" pattern="[0-9]{10}" class="form-control" id="telefono" name="telefono" required value="<?php echo $telefono;?>">
                     </div>
                 </div>
 
                 <div class="form-row mt-3">
                     <div class="form-group col-sm-6 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Fraccionamiento: </p>
+                        <p style="font-size:20px;color: rgba(152, 37, 6);">Fraccionamiento: </p>
                         <input type="text" class="form-control" id="colonia" name="colonia" required value="<?php echo $colonia;?>">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Calle: </p>
+                        <p style="font-size:20px;color: rgba(152, 37, 6);">Calle: </p>
                         <input type="text" class="form-control" id="calle" name="calle" required value="<?php echo $calle;?>">
                     </div>
                 </div>
 
                 <div class="form-row mt-3">
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">No. ext: </p>
+                        <p style="font-size:20px;color: rgba(152, 37, 6);">No. ext: </p>
                         <input type="text" class="form-control" id="no_ext" name="no_ext" required value="<?php echo $no_ext;?>">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Cp: </p>
+                        <p style="font-size:20px;color: rgba(152, 37, 6);">Cp: </p>
                         <input type="number" class="form-control" id="cp" name="cp" required value="<?php echo $cp;?>">
                     </div>
                 </div>

@@ -90,9 +90,9 @@
             <div class="form-group col-sm-6 col-md-7">
                 <p class="h5"> Consumo de Agua <small>(Litros por día)</small> </p><br>
             </div>
+
             <div class="form-group col-sm-6 col-md-3" id="agua_litros">
-                <label for="quien"></label>
-                <input type="number" name="agua_litros">  litros
+                <input type="number" class="form-control" name="agua_litros"> 
             </div>
         </div>
         <!--Actividad Fisica -->
@@ -111,8 +111,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="act_fisica">
-                <label for="quien">Especifique</label>
-                <input type="number" name="act_fisica_esp">
+                <label for="quien">Especifique:</label>
+                <input type="number" class="form-control" name="act_fisica_esp">
             </div>
         </div>
         <!--Drogas -->
@@ -131,8 +131,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="drogas">
-                <label for="quien">Especifique</label>
-                <input type="text" name="drogras_esp">
+                <label for="quien">Especifique:</label>
+                <input type="text" class="form-control" name="drogras_esp">
             </div>
         </div>
         <!--Tabaquismo -->
@@ -151,8 +151,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="fuma">
-                <label for="quien">Especifique</label>
-                <input type="text" name="fuma_esp">
+                <label for="quien">Especifique:</label>
+                <input type="text" class="form-control" name="fuma_esp">
             </div>
         </div>
         <!--Alcoholismo -->
@@ -171,8 +171,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="alcohol">
-                <label for="quien">Especifique</label>
-                <input type="text" name="alcohol_esp">
+                <label for="quien">Especifique:</label>
+                <input type="text" class="form-control" name="alcohol_esp">
             </div>
         </div>
         <!-- En caso de ser mujer -->
@@ -207,8 +207,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="embarazada">
-                <label for="quien">Especifique</label>
-                <input type="text" name="embarazada_esp">
+                <label for="quien">Especifique:</label>
+                <input type="text" class="form-control" name="embarazada_esp">
             </div>
         </div>
         <!-- Amamantando -->
@@ -244,8 +244,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="embarazos">
-                <label for="quien">Especifique</label>
-                <input type="number" name="embarazos_esp">
+                <label for="quien">Especifique:</label>
+                <input type="number" class="form-control" name="embarazos_esp">
             </div>
             
         </div>
@@ -283,8 +283,8 @@
                 </div>
             </div>
             <div class="form-group col-sm-6 col-md-3" style="visibility: hidden;" id="complicaciones">
-                <label for="quien">Especifique</label>
-                <input type="text" name="complicaciones_esp">
+                <label for="quien">Especifique:</label>
+                <input type="text" class="form-control" name="complicaciones_esp">
             </div>
             
         </div>

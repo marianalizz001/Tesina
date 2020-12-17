@@ -40,6 +40,7 @@
       $idUsuario = $datos['_id'];
       $tipo = $datos['tipo_usuario'];
       $usuario = $datos['usuario'];
+      $contraseña = $datos['passwd'];
       $nombre = $datos['nombre'];
       $apPat = $datos['apPat'];
       $apMat = $datos['apMat'];
@@ -73,6 +74,13 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <form action="CambiarPasswd.php" method="post">
+
+                    <div class="form-group">
+                        <p style="font-size:20px;color: rgba(144, 12, 52);">Contraseña Actual: </p>
+                        <input type="hidden" name="contraseña" value="<?php echo $contraseña; ?>">
+                        <input type="password" class="form-control"  name="passwd_antigua" required>
+                    </div>
+
                     <div class="form-group">
                         <p style="font-size:20px;color: rgba(144, 12, 52);">Nueva Contraseña: </p>
                         <input type="hidden" name="idUsuario" value="<?php echo $idUsuario; ?>">
@@ -116,12 +124,12 @@
                 <input type="hidden" name="tipo" value="<?php echo $tipo; ?>">
                 <div class="form-row mt-3">
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Correo: </p>
+                        <p style="font-size:20px;color: rgba(220,86,72);">Correo: </p>
                         <input type="email" class="form-control" id="correo" name="correo" required value="<?php echo $correo;?>">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Teléfono: </p>
+                        <p style="font-size:20px;color: rgba(220,86,72);">Teléfono: </p>
                         <input type="number" class="form-control" id="telefono" name="telefono" required value="<?php echo $telefono;?>">
                     </div>
                 </div>
@@ -129,24 +137,24 @@
                 <div class="form-row mt-3">
                     
                     <div class="form-group col-sm-6 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Fraccionamiento: </p>
+                        <p style="font-size:20px;color: rgba(220,86,72);">Fraccionamiento: </p>
                         <input type="text" class="form-control" id="colonia" name="colonia" required value="<?php echo $colonia;?>">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Calle: </p>
+                        <p style="font-size:20px;color: rgba(220,86,72);">Calle: </p>
                         <input type="text" class="form-control" id="calle" name="calle" required value="<?php echo $calle;?>">
                     </div>
                 </div>
 
                 <div class="form-row mt-3">
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">No. ext: </p>
+                        <p style="font-size:20px;color: rgba(220,86,72);">No. ext: </p>
                         <input type="text" class="form-control" id="no_ext" name="no_ext" required value="<?php echo $no_ext;?>">
                     </div>
 
                     <div class="form-group col-sm-12 col-md-6">
-                        <p style="font-size:20px;color: rgba(144, 12, 52);">Cp: </p>
+                        <p style="font-size:20px;color: rgba(220,86,72);">Cp: </p>
                         <input type="number" class="form-control" id="cp" name="cp" required value="<?php echo $cp;?>">
                     </div>
                 </div>

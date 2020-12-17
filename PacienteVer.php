@@ -47,11 +47,12 @@ $(document).ready(function () {
 
 <div class="container">
     <div class="row justify-content-between">
-        <div class="col-sm-6 " style="margin-top:20px; padding-bottom:10px;">
-            <a class="btn rounded" href="PacienteAlta.php"><span class="text"><i class="fa fa-plus-square" aria-hidden="true"></i>   Nuevo Paciente</span></a>
+    <div class="col-sm-4" style="margin-top:20px; padding-bottom:10px;"><a class="btn rounded" href="PacienteAlta.php"><span class="text"><i class="fa fa-plus-square" aria-hidden="true"></i>   Agregar Paciente</span></a></div>
+        <div class="col-sm-3" >
+            
         </div>
-        <div class="col-sm-6 col-sm-3 input-group" style="important!; margin-top:20px; padding-bottom:10px;">
-<span class="input-group-addon" style="margin-top:10px;">Buscar&nbsp;&nbsp;</span>
+        <div class="col-sm-5 col-sm-3 input-group" style="important!; margin-top:20px; padding-bottom:10px;">
+            <span class="input-group-addon" style="margin-top:10px;">Buscar&nbsp;&nbsp;</span>
             <input id="filtrar" type="text" class="form-control" placeholder="">
         </div>
     </div>

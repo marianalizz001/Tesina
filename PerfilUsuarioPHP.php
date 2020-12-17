@@ -28,7 +28,7 @@
 
                 $consulta = $bd->Usuario->updateOne(
                     ['_id' => new \MongoDB\BSON\ObjectID($idUsuario)],
-                    ['$set' => ['foto' => $nombre_foto]],
+                    ['$set' => ['foto' => $nombre_foto]]
                 );
 
                 if($consulta->getModifiedCount() == 0){
@@ -66,7 +66,7 @@
             'direccion.no_ext' => $no_ext,
             'direccion.colonia' => $colonia,
             'direccion.cp' => $cp,
-        ]],
+        ]]
     );
 
  	if($consulta2->getModifiedCount() > 0){

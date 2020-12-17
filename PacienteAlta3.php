@@ -100,6 +100,7 @@
             <div class="form-group col-sm-6 col-md-7">
                 <p class="h5"> ¿Realiza actividad física? <small>(Horas por semana)</small></p><br>
             </div>
+            
             <div class="form-group col-sm-6 col-md-2">
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="act_fisica" value="Si" onclick="habilitar(11)">

@@ -22,7 +22,7 @@
   </head>
 
 <body>
-<br><br><br>
+<br><br><br><br><br><br>
 <?php
   $temp = $_SESSION['id'];
   $cursor = $bd->Usuario->find(['_id' => $temp]);

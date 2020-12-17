@@ -4,7 +4,7 @@
 
     $id = $_REQUEST['idUsuario'];
 
-    $query = $bd->Usuario->find(
+    $query = $bd->Paciente->find(
         [
             '_id' => new \MongoDB\BSON\ObjectID($id)
         ]

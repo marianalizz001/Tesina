@@ -38,38 +38,38 @@
     
             <div class="form-group col-sm-4 col-md-2">
                 <label for="desayuno" style="font-size:20px;color: rgba(144, 12, 52);"> Desayuno: </label>
-                <textarea class="form-control" id="desayuno" rows="6" name="desayuno"></textarea>
+                <textarea class="form-control" id="desayuno" rows="6" name="desayuno" style="resize:none"></textarea>
             </div>
 
             <div class="form-group col-sm-4 col-md-2">
                 <label for="colacion_1" style="font-size:20px;color: rgba(144, 12, 52);"> Colación M.: </label>
-                <textarea class="form-control" id="colacion_1" rows="6" name="colacion_m"></textarea>
+                <textarea class="form-control" id="colacion_1" rows="6" name="colacion_m" style="resize:none"></textarea>
             </div>
 
             <div class="form-group col-sm-4 col-md-2">
                 <label for="comida" style="font-size:20px;color: rgba(144, 12, 52);"> Comida: </label>
-                <textarea class="form-control" id="comida" rows="6" name="comida"></textarea>
+                <textarea class="form-control" id="comida" rows="6" name="comida" style="resize:none"></textarea>
             </div>
 
             <div class="form-group col-sm-4 col-md-2">
                 <label for="colacion_2" style="font-size:20px;color: rgba(144, 12, 52);"> Colación V.: </label>
-                <textarea class="form-control" id="colacion_2" rows="6" name="colacion_v"></textarea>
+                <textarea class="form-control" id="colacion_2" rows="6" name="colacion_v" style="resize:none"></textarea>
             </div>
 
             <div class="form-group col-sm-4 col-md-2">
                 <label for="cena" style="font-size:20px;color: rgba(144, 12, 52);"> Cena: </label>
-                <textarea class="form-control" id="cena" rows="6" name="cena"></textarea>
+                <textarea class="form-control" id="cena" rows="6" name="cena" style="resize:none"></textarea>
             </div>
             <div class="form-group col-sm-4 col-md-2">
                 <label for="antojos" style="font-size:20px;color: rgba(144, 12, 52);"> Antojitos: </label>
-                <textarea class="form-control" id="antojos" rows="6" name="antojos"></textarea>
+                <textarea class="form-control" id="antojos" rows="6" name="antojos" style="resize:none"></textarea>
             </div>
 
         </div>
         <div class="form-row">
             <div class="form-group col-sm-12 col-md-12">
                 <label for="calorias" style="font-size:20px;color: rgba(144, 12, 52);"> Calorias aproximadas:     </label>
-                <input type="text" class="form-control" name="calorias" style="width: 400px;">
+                <input type="number" class="form-control" name="calorias" style="width: 400px;">
             </div>
         </div>
         <hr>
@@ -276,15 +276,15 @@
 
             <div class="form-group col-sm-4 col-md-3">
                 <label for="transporte" style="font-size:20px;color: rgba(144, 12, 52);"> Transporte: </label>
-                <textarea class="form-control" id="transporte" rows="6" name="transporte"></textarea>
+                <textarea class="form-control" id="transporte" rows="6" name="transporte" style="resize:none"></textarea>
             </div>
             <div class="form-group col-sm-4 col-md-3">
                 <label for="apoyo" style="font-size:20px;color: rgba(144, 12, 52);"> Apoyo: </label>
-                <textarea class="form-control" id="apoyo" rows="6" name="apoyo"></textarea>
+                <textarea class="form-control" id="apoyo" rows="6" name="apoyo" style="resize:none"></textarea>
             </div>
             <div class="form-group col-sm-4 col-md-3">
                 <label for="vives" style="font-size:20px;color: rgba(144, 12, 52);"> Vives: </label>
-                <textarea class="form-control" id="vives" rows="6" name="vives"></textarea>
+                <textarea class="form-control" id="vives" rows="6" name="vives" style="resize:none"></textarea>
             </div>
 
         </div>

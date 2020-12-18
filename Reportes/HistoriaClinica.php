@@ -57,33 +57,6 @@
 
         $pdf->Cell(140,6,utf8_decode($calle. " ". $no_ext. " ". $colonia. " " . $cp),1,1,'L');
 
-        $pdf->Cell(50,6,utf8_decode('Referido por '),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-
-        $detalle = $row['detalle_paciente'];
-        $referido = $detalle->referido;
-        $mot_consulta = $detalle->mot_consulta;
-        $ult_consulta = $detalle->ult_consulta;
-        $contacto = $detalle->contacto_emergencia;
-        
-        $cont_nombre = $contacto->nombre;
-        $cont_apPat = $contacto->apPat;
-        $cont_apMat = $contacto->apMat;
-        $cont_tel = $contacto->telefono;
-
-        $pdf->Cell(140,6,utf8_decode($referido),1,1,'L');
-
-        $pdf->Cell(50,6,utf8_decode('Motivo de consulta '),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        $pdf->Cell(140,6,utf8_decode($mot_consulta),1,1,'L');
-
-        $pdf->Cell(50,6,utf8_decode('Última consulta dental'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        $pdf->Cell(140,6,utf8_decode($ult_consulta),1,1,'L');
-
-        $pdf->Cell(50,6,utf8_decode('Contacto emergencia'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        $pdf->Cell(140,6,utf8_decode($cont_nombre. " ". $cont_apPat. " ". $cont_apMat ." - ". $cont_tel),1,1,'L');
         
         $pdf->Ln();
         $pdf->SetFillColor(232,232,232);
@@ -149,41 +122,10 @@
 
         $obj = json_decode($row['AntecedentesPersonalesNoPatológicos']);
 
-        $pdf->Cell(135,6,utf8_decode('¿Cuanta su hogar con todos los servicios básicos de urbanidad?'),1,0,'L',1);
+        $pdf->Cell(135,6,utf8_decode('¿Cuantos litros de agua consume?'),1,0,'L',1);
         $pdf->SetFillColor(232,232,232);
-        if ($obj->{'servicios_basicos'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
+        $pdf->Cell(55,6,utf8_decode("" .$obj->{'agua_litros'}." litros"),1,1,'L');
 
-        $pdf->Cell(135,6,utf8_decode('¿Su baño personal es diario?'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        if ($obj->{'bano_personal'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
-        
-        $pdf->Cell(135,6,utf8_decode('¿Cepilla sus dientes? (Veces por día)'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        if ($obj->{'cepillar_dientes'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si, " .$obj->{'cepillar_dientes_esp'}." veces"),1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
-        
-        $pdf->Cell(135,6,utf8_decode('¿Utiliza enjuague bucal?'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        if ($obj->{'enjuage_bucal'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
-
-        $pdf->Cell(135,6,utf8_decode('¿Utiliza hilo dental?'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        if ($obj->{'hilo_dental'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
-        
         $pdf->Cell(135,6,utf8_decode('¿Realiza actividad física? (Horas por semana)'),1,0,'L',1);
         $pdf->SetFillColor(232,232,232);
         if ($obj->{'act_fisica'} == "Si")
@@ -212,20 +154,7 @@
         else
             $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
         
-        $pdf->Cell(135,6,utf8_decode('¿Tatuajes?'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        if ($obj->{'tatuajes'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si, " .$obj->{'tatuajes_esp'}). "tatuajes",1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
 
-        $pdf->Cell(135,6,utf8_decode('¿Esquema de inmunización completo?'),1,0,'L',1);
-        $pdf->SetFillColor(232,232,232);
-        if ($obj->{'vacunas'} == "Si")
-            $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
-        else
-            $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
-        
         if ($row['genero'] == 'F'){
             $pdf->Cell(135,6,utf8_decode('¿Está embarazada? (Semanas)?'),1,0,'L',1);
             $pdf->SetFillColor(232,232,232);
@@ -240,6 +169,32 @@
                 $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
             else
                 $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
+
+            $pdf->Cell(135,6,utf8_decode('¿Embarazos Previos?'),1,0,'L',1);
+                $pdf->SetFillColor(232,232,232);
+                if ($obj->{'embarazos'} == "Si")
+                    $pdf->Cell(55,6,utf8_decode("Si, " .$obj->{'embarazos_esp'}). "embarazos",1,1,'L');
+                else
+                    $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
+
+            $pdf->Cell(135,6,utf8_decode('¿Nacieron a termino?'),1,0,'L',1);
+            $pdf->SetFillColor(232,232,232);
+                if ($obj->{'termino'} == "Si")
+                    $pdf->Cell(55,6,utf8_decode("Si"),1,1,'L');
+                else
+                    $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
+
+            $pdf->Cell(135,6,utf8_decode('¿Complicaciones?'),1,0,'L',1);
+                $pdf->SetFillColor(232,232,232);
+                if ($obj->{'complicaciones'} == "Si")
+                    $pdf->Cell(55,6,utf8_decode("Si, " .$obj->{'complicaciones'}). "" ,1,1,'L');
+                else
+                    $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
+
+            $pdf->Cell(135,6,utf8_decode('Tipo de parto:'),1,0,'L',1);
+                $pdf->SetFillColor(232,232,232);
+                $pdf->Cell(55,6,utf8_decode("Si, " .$obj->{'nat_o_ces'})."" ,1,1,'L');
+
         }
 
         if ($row['f_nac'] < '2002-01-01'){
@@ -276,6 +231,7 @@
         else
             $pdf->Cell(55,6,utf8_decode("No"),1,1,'L');
 
+            /*
         $pdf->Cell(135,6,utf8_decode('¿Alergia a alguna sustancia, anestesia o medicamento?'),1,0,'L',1);
         $pdf->SetFillColor(232,232,232);
         if ($obj->{'anestesia'} == "S")
@@ -444,6 +400,7 @@
         $pdf->SetFillColor(232,232,232);
         $pdf->Cell(140,6,utf8_decode($obj->{'pronostico'}),1,1,'L');
         $pdf->Ln();
+        */
 
         $pdf->AddPage(); 
 

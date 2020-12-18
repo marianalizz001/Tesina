@@ -143,9 +143,8 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <th scope="col">Fecha de la cita</th>
-                                        <th scope="col">Procedimiento a realizar</th>
+                                        <th scope="col">Detalles</th>
                                         <th scope="col">¿Asistió?</th>
-                                        <th scope="col">Odontograma</th>
                                         <th scope="col">Monto</th>
                                     </tr>
                                 </thead>
@@ -167,7 +166,6 @@
                                         $fecha = $act['start'];
                                         $proc = $act['title'];
                                         $estatus = $act['estatus'];
-                                        $odontograma = $act['odontograma'];
                                         echo'
                                         <tr>
                                             <td>' .$fecha.'</td>

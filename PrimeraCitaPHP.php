@@ -7,15 +7,16 @@
 <?php
     include("Conexion.php");
     
-    $idUsuario = $_REQUEST['idUsuario'];
+    $idUsuario = $_POST['idUsuario'];
+    $idCita = $_POST['idCita'];
 
     unset($_POST['btnEnviar']);
     unset($_POST['idUsuario']);
     $var_json = json_encode($_POST);
 
-    $consulta = $bd->Paciente->updateOne(
-        ['_id' => new \MongoDB\BSON\ObjectID($idUsuario)],
-        ['$set' => ['HistorialClinico.EvaluaciónBiométrica' => $var_json]]
+    $consulta = $bd->Cita->updateOne(
+        ['_id' => new \MongoDB\BSON\ObjectID($idCita)],
+        ['$set' => ['seguimiento' => $var_json]]
     );
 
     if ($consulta->getModifiedCount() > 0) {
@@ -32,7 +33,7 @@
 
                     function(isConfirm){   
                         if (isConfirm) {     
-                            window.location.href = "PrimeraCita.php";
+                            window.location.href = "Calculos.php";
                         }
                     });
             });
@@ -52,7 +53,7 @@
         
                 function(isConfirm){   
                     if (isConfirm) {     
-                         window.location.href = "PacienteAlta.php";
+                         window.location.href = "EditarCita.php";
                     }
                 });
          });

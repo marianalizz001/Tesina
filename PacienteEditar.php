@@ -25,6 +25,7 @@
     include ('Conexion.php');
 ?>
 
+
 <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: rgba(246, 131, 40);">
@@ -59,15 +60,8 @@
         <a class="nav-link" href="PacienteVer.php"><h5>Pacientes</h5><span class="sr-only">(current)</span></a>
       </li>
 
-      <li class="nav-item dropdown" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:18px;color:white;">
-          Citas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="submenu">
-        <a class="dropdown-item" href="Citas.php">Ver</a>
-        <a class="dropdown-item" href="AgregarCita.php">Agendar</a>
-        <a class="dropdown-item" href="EditarCita.php">Editar/Eliminar</a>  
-        </div>
+      <li class="nav-item active" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
+        <a class="nav-link" href="EditarCita.php"><h5>Citas</h5><span class="sr-only">(current)</span></a>
       </li>
 
       <?php } ?>
@@ -95,7 +89,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                 <?php echo'
-                    <iframe class="col-lg-12 col-md-12 col-sm-12" src="Reportes/HistoriaClinica.php?idUsuario='.$idUsuario.'" height="600"></iframe>'; ?>
+                    <iframe class="col-lg-12 col-md-12 col-sm-12" src="Reportes/HistoriaClinica.php?idUsuario='.$idUsuario.'" height="600"></iframe>';?>
                 </div>
             </div>
         </div>
@@ -150,17 +144,13 @@
                                 </thead>
                                 <tbody class="buscar" style="padding-top: 40px; width:100%;">
 
-                                <?php
-                                    include ('Conexion.php');
-                                    $idUsuario=$_GET['idUsuario'];
+                                <?php                                    
                                     $consulta = $bd->Cita->find([
                                       'Usuario_idUsuario' => new \MongoDB\BSON\ObjectID($idUsuario)
                                     ]);
                                     
                                     foreach ($consulta as $act){
-                                      ?>
-                                    <script>console.log("si entra");</script>
-                                    <?php
+                                        echo "hola";
                                         $idCita = (string)$act['_id'];
                                         $nombre = $act['nombre'];
                                         $fecha = $act['start'];

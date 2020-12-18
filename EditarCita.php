@@ -76,35 +76,55 @@ $(document).ready(function () {
             </tr>
         </thead>
         <tbody class="buscar" style="padding-top: 40px; width:100%;">
+            <?php
+                include ('Conexion.php');
+                date_default_timezone_set('America/Mexico_City');
+                $consulta = $bd->Cita->find(array(
+                    'start' => array('$gte' => date ( "Y-m-d" ))
+                ));
 
-        <?php
-            include ('Conexion.php');
-            date_default_timezone_set('America/Mexico_City');
-            $consulta = $bd->Cita->find(array(
-                'start' => array('$gte' => date ( "Y-m-d" ))
-            ));
-
-            foreach ($consulta as $act){
-                $id = $act['_id'];
-                $title = $act['title'];
-                $nombre = $act['nombre'];
-                $start = $act['start'];
-                $estatus = $act['estatus'];
-                if($estatus == NULL || $estatus == 0){
-                    echo'
-                    <tr>
-                    <td>    
-                      <a href="EventosEditar.php?id='.$id.'"><img src="img/editar.webp" width="25" height="25"></a>
-                      <a href="EliminarCitaPHP.php?id='.$id.'"><img src="img/borrar.png" width="25" height="25"></a>
-                    </td>';
-                        echo '
+                foreach ($consulta as $act){
+                    $id = $act['_id'];
+                    $title = $act['title'];
+                    $nombre = $act['nombre'];
+                    $start = $act['start'];
+                    $estatus = $act['estatus'];
+                    $idUsuario = $act['Usuario_idUsuario'];
+                    if($estatus == NULL || $estatus == 0){
+                        echo'
+                        <tr>
+                        <td>    
+                        <a href="EventosEditar.php?id='.$id.'"><img src="img/editar.webp" width="25" height="25"></a>
+                        <a href="EliminarCitaPHP.php?id='.$id.'"><img src="img/borrar.png" width="25" height="25"></a>
+                        </td>
                         <td>' .$nombre.'</td>
-                        <td>' .$title.'</td>
-                        <td><a href="CitaPHP.php?id='.$id.'">' .$start. '</a></td>
+                        <td>';
+                        if($title=="Primera Cita"){                                           
+                            ?>
+                            <form id="miFormulario" action="PrimeraCita.php" method="post">
+                                <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$id.'"> 
+                                    <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">'
+                                ?>
+                                <button onclick=submit title="Primera Cita" style="background:transparent;"><strong>Primera Cita </strong><i class="fas fa-teeth-open"></i></button>
+                            </form>
+                            <?php
+                        }else{
+                            ?>
+                            <form id="miFormulario2" action="Cita.php" method="post">
+                                <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$id.'"> 
+                                    <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">'
+                                ?>
+                                <button onclick=submit title="Seguimiento" style="background:rgba(85, 219, 183, 0.83);"><strong>Seguimiento</strong><i class="fas fa-teeth-open"></i></button>
+                            </form>
+                            <?php
+                        }
+                                echo '
+                        </td>
+                        <td>'.$start. '</td>
                         </tr>'; 
-                }      
-            }
-        ?>            
+                    }      
+                }
+            ?>            
         </tbody>
     </table>
 </div>

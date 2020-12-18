@@ -71,6 +71,7 @@
                               
                             ?>           
                             </select>
+                            <input type="hidden" value="<?php echo $id;?>" name="id">
                             </div>
                         </div>
                         <div class="form-group row" id= "nombre"  style="visibility : hidden;">

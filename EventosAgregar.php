@@ -11,14 +11,36 @@
 	$idUsuario= $_SESSION['id'];
 	if($_REQUEST['nom_paciente']==""){
 		$Nombre = $_REQUEST['nombre'];
+		$id=null;
 	}else{
 		$Nombre = $_REQUEST['nom_paciente'];
+		$arrayPalabras = explode(' ', $Nombre);
+		if(count($arrayPalabras)==4){
+			$nom=$arrayPalabras[0]." ".$arrayPalabras[1];
+			$apPat=$arrayPalabras[2];
+			$apMat= $arrayPalabras[3];
+		}else{
+			$nom=$arrayPalabras[0];
+			$apPat=$arrayPalabras[1];
+			$apMat= $arrayPalabras[2];
+		}
+		$consulta3 = $bd->Paciente->find([
+			'nombre' => $nom,
+			'apPat' => $apPat,
+			'apMat' => $apMat
+		]);
+		foreach($consulta3 as $act){
+			$id=$act['_id'];
+		}
 	}
 	$Fecha=$_REQUEST['fecha_cita'];
 	$Hora= $_REQUEST['txtHora'];
 	$Titulo= $_REQUEST['txtTitulo'];
 	$Fecha_Inicial = $Fecha." ".$Hora;
 	$Fecha_Final = $Fecha." ".$Hora;
+
+	
+	
 
 	$consulta2 = $bd->Cita->find([]);
 	$b=0;
@@ -47,6 +69,7 @@
 			'end' => $Fecha_Final,
 			'estatus' => NULL,
 			'seguimiento' => NULL,
+			'Usuario_idUsuario' => $id,
 	   ]);
 		if($consulta->getInsertedCount() > 0){
 			?>

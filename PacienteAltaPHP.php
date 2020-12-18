@@ -29,7 +29,8 @@
             ]
         ]
     );
-    
+
+       
     if($consulta->getInsertedCount() > 0){
         header('location: PacienteAlta2.php?correo='.$correo.'');
     }else{

@@ -31,8 +31,9 @@
                     closeOnConfirm: false}, 
 
                     function(isConfirm){   
-                        if (isConfirm) {     
-                            window.location.href = "PrimeraCita.php";
+                        if (isConfirm) {  
+                            //header('location: EditarCita.php?idUsuario='.$idUsuario.'');   
+                            window.location.href = "EditarCita.php";
                         }
                     });
             });
@@ -52,7 +53,7 @@
         
                 function(isConfirm){   
                     if (isConfirm) {     
-                         window.location.href = "PacienteAlta.php";
+                        header('location: PacienteAlta7.php?idUsuario='.$idUsuario.'');   
                     }
                 });
          });

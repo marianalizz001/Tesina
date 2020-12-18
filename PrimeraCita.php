@@ -31,7 +31,7 @@
         <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
         <input type="hidden" value="<?php echo $idCita;?>" name="idCita">
         <input type="hidden" value="<?php echo $idCita;?>" name="idCita">
-        <p class="h4">Primera Cita - <small>Evaluación Antropométrica</small></p>
+        <p class="h4"> Cita - <small>Evaluación Antropométrica</small></p>
         <hr>
         <div class="form-row">
             <input type="hidden" value="<?php echo $idCita;?>" name="idCita">

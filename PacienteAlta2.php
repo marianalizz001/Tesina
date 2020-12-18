@@ -66,6 +66,7 @@
         }
     ?>
     <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
+    <input type="hidden" value="<?php echo $user;?>" name="correo">
         <p class="h4"> Nuevo Paciente - <small>Antecedentes Heredo Familiares</small></p>
         <hr>
         ¿Alguno de sus Padres, Abuelos o Hermanos padece alguno de los siguientes? SI/NO, ¿Quién?<br><br>

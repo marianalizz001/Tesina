@@ -90,6 +90,7 @@ $(document).ready(function () {
                     $start = $act['start'];
                     $estatus = $act['estatus'];
                     $idUsuario = $act['Usuario_idUsuario'];
+
                     if($estatus == NULL || $estatus == 0){
                         echo'
                         <tr>
@@ -99,9 +100,9 @@ $(document).ready(function () {
                         </td>
                         <td>' .$nombre.'</td>
                         <td>';
-                        if($title=="Primera Cita"){                                           
+                        if($idUsuario == ""){                                           
                             ?>
-                            <form id="miFormulario" action="PrimeraCita.php" method="post">
+                            <form id="miFormulario" action="PacienteAlta.php" method="post">
                                 <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$id.'"> 
                                     <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">'
                                 ?>

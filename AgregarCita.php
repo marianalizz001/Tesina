@@ -36,7 +36,7 @@
                     <form action="EventosAgregar.php"  method="POST"  enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <label class="form-check-label" for="NuevoPac"> Nuevo Paciente </label>
+                        <label for="nombre-paciente" style="font-size:20px;color: rgba(144, 12, 52);"> Paciente Nuevo: </label>
                         </div>
                         <div class="form-group col-6">
                             <div class="form-check-inline">
@@ -117,7 +117,7 @@
                     
                 </div>
                 <div class="col-6">
-                        <img src="img/Diente.png" alt="Calendario" width="250px">
+                        <img src="img/calendario.webp" alt="Calendario" width="300px">
                     </div>
             </div>
 

@@ -1,12 +1,12 @@
 <?php
-	include("../compruebo.php");
+	//include("../compruebo.php");
 	require '../fpdf/fpdf.php';
 	
 	class PDF extends FPDF
 	{
 		function Header()
 		{
-			$this->Image('../img/manzana.png', 10, 10, 50 );
+			$this->Image('../img/pdf.jpg', 10, 10, 50 );
 			$this->SetFont('Helvetica','B',18);
 			$this->SetTextColor(184,10,10);
 			$this->Cell(30);

@@ -138,8 +138,7 @@
                                     <tr>
                                         <th scope="col">Fecha de la cita</th>
                                         <th scope="col">Detalles</th>
-                                        <th scope="col">¿Asistió?</th>
-                                        <th scope="col">Monto</th>
+                                        <th scope="col">Seguimiento</th>
                                     </tr>
                                 </thead>
                                 <tbody class="buscar" style="padding-top: 40px; width:100%;">
@@ -150,135 +149,33 @@
                                     ]);
                                     
                                     foreach ($consulta as $act){
-                                        echo "hola";
                                         $idCita = (string)$act['_id'];
                                         $nombre = $act['nombre'];
                                         $fecha = $act['start'];
                                         $proc = $act['title'];
                                         $estatus = $act['estatus'];
+                                        $seguimiento = $act['seguimiento'];
                                         echo'
                                         <tr>
                                             <td>' .$fecha.'</td>
-                                            <td>' .$proc.'</td>
-                                            <td>';
-                                            if($estatus==null){
-                                            ?>
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <form id="miFormulario1" action="PacienteEditarPHP.php" method="post">
-                                                            <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
-                                                                        <input type="hidden" name="opc" id="opc" value="1"> 
-                                                                        <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'"> 
-                                                            '?>
-
-                                                            <button id="estatus" onclick=submit title="Asistió"><i class="fas fa-check-circle" style="color:green;background-color:transparent "></i></button>
-                                                        </form>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <form id="miFormulario2" action="PacienteEditarPHP.php" method="post">
-                                                            <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
-                                                                        <input type="hidden" name="opc" id="opc" value="0"> 
-                                                                        <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
-                                                            '?>
-
-                                                            <button id="estatus" onclick=submit title="No asistió"><i class="fas fa-times-circle" style="color:red;"></i></button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                            <?php
-                                            }elseif($estatus=="1"){
-                                                echo "<strong style='color: green;'>Asistió</strong>";
-
-                                            }else{
-                                                echo "<strong style='color: red;'>No asistió</strong>";
-
-                                            }
-                                            echo '</td>
-                                            <td>';
-                                            if($odontograma==null && $estatus!='0'){                                           
+                                            <td>' .$proc.'</td>';
+                                            echo '<td>';
+                                            if($seguimiento!=null){                                           
                                             ?>
 
-                                            <form id="miFormulario3" action="PacienteAlta9.php" method="post">
+                                            <form id="miFormulario3" action="" method="post">
                                                 <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
                                                     <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
                                                 '?>
-                                                <button onclick=submit title="Ir a odontograma" style="background:transparent;"><strong>Odontograma </strong><i class="fas fa-teeth-open"></i></button>
+                                                <button onclick=submit title="Ir a odontograma" style="background:transparent;"><strong>Información</strong><i class="fas fa-file"></i></button>
                                             </form>
                                             <?php
-                                            }elseif($odontograma!=null && $estatus!='0'){
-                                                ?>
-                                                <form id="miFormulario3" action="PacienteOdontograma.php" method="post">
-                                                    <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
-                                                        <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
-                                                    '?>
-                                                    <button onclick=submit title="Ir a odontograma" style="background:rgba(85, 219, 183, 0.83);"><strong>Odontograma </strong><i class="fas fa-teeth-open"></i></button>
-                                                </form>
-                                            <?php
                                             }else{
-                                                echo 'No hay odontograma';
+                                                echo 'Aún no existe información';
                                             }
                                             echo'
                                             </td>
-                                            <td>';
-                                            if($estatus!='0'){
-                                              $a=0;
-                                              $consulta2 = $bd->Pagos->find([
-                                                'Cita_idCita' => $idCita
-                                              ]);
-                                                /*$consuta2= "SELECT * from pagos where cita_idcita=$idCita";
-                                                if(! $resultado2 = $conexion -> query($instruccion2)){
-                                                    echo "Ha sucedido un problema ... ";
-                                                    exit();
-                                                }
-                                                $act2 = $resultado2 -> fetch_assoc();*/
-                                            // print_r($consulta2);
-                                                foreach ($consulta2 as $act2){
-                                                  ?>
-                                                <script>console.log("tambieeeeeen si entra");</script>
-                                                <?php
-                                                $monto= $act2['monto'];
-                                                $a=1;
-                                                if($monto>0){
-                                                  echo "$",$monto,".00";
-                                                    ?>
-                                                        <form id="miFormulario4" action="Reportes/GenerarTicket.php" method="post">
-                                                        <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
-                                                        <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
-                                                    '?>
-                                                        <button onclick=submit title="Generar Reporte"><i class="fas fa-money-check-alt" style="color:orange;"></i></button>
-                                                    </form>
-                                                    <?php 
-                                                }else{
-                                                  ?>
-                                                  <form id="miFormulario4" action="Pagos.php" method="post">
-                                                  <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
-                                                  <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
-                                              '?>
-                                                  <button onclick=submit title="Agregar monto"><i class="fas fa-money-bill-wave" style="color:#136303;"></i></button>
-                                              </form>
-                                              <?php
-                                                }
-                                              }
-                                              if($a==0 && $estatus==1){
-                                                ?>
-                                                  <form id="miFormulario4" action="Pagos.php" method="post">
-                                                  <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
-                                                  <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
-                                              '?>
-                                                  <button onclick=submit title="Agregar monto"><i class="fas fa-money-bill-wave" style="color:#136303;"></i></button>
-                                              </form>
-                                              <?php
-                                              }
-                                            }else{
-                                                echo '$ 0.00';
-                                            }
                                             
-                                            echo'
-                                            </td>
                                         </tr>';
                                           
                                     }

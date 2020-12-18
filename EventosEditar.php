@@ -22,6 +22,7 @@
 </head>
 
 <body>
+<br>
 <?php
     include ('Conexion.php');
 ?>
@@ -55,6 +56,9 @@
                               foreach ($consulta as $act){
                                 $id = $act['_id'];
                                 $nombre = $act['nombre'];
+                                $start = $act['start'];
+                                $title = $act['title'];
+
                                // echo '<textarea  class="form-control" readonly="readonly" name="nombre" id="nombre" value="'.$nombre.'</textarea>';
 
                               }
@@ -68,7 +72,7 @@
                                 <label for="fecha" style="font-size:20px;color: rgba(144, 12, 52);"> Fecha de la cita: </label>
                             </div>
                             <div class="col-6">
-                                <input type="date" class="form-control" name="fecha_cita" id="fecha_cita" min="2019-12-01" required >
+                                <input type="date" class="form-control" name="fecha_cita" id="fecha_cita" min="2019-12-01" required value="<?php echo $start ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -76,7 +80,7 @@
                                 <label for="hora" style="font-size:20px;color: rgba(144, 12, 52);"> Hora de la cita: </label>
                             </div>
                             <div class="col-6">
-                            <input type="time" class="form-control" name="txtHora" id="txtHora" required>
+                            <input type="time" class="form-control" name="txtHora" id="txtHora" required value="<?php echo $start ?>">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -84,9 +88,21 @@
                                 <label for="titulo" style="font-size:20px;color: rgba(144, 12, 52);"> Tipo de Cita: </label>
                             </div>
                             <div class="col-6">
-                            <select class="form-control" name="txtTitulo" id="txtHora" required >
-                            <option>Primera Cita</option>
-                            <option>Seguimiento</option>
+                            <select class="form-control" name="txtTitulo" id="txtTitulo" required >
+
+                            <?php
+                                if($title == "Primera Cita"){ ?>
+                                <option selected value="Primera Cita">Primera Cita</option>
+                                <option value="Seguimiento">Seguimiento</option>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <option value="Primera Cita">Primera Cita</option>
+                                    <option selected value="Seguimiento">Seguimiento</option>
+                                    <?php
+                                }
+                            ?>
+
                         </select>
 
                             </div>
@@ -98,7 +114,7 @@
                     
                 </div>
                 <div class="col-6">
-                        <img src="img/dental.png" alt="Calendario" width="250px">
+                        <img src="img/calendario.webp" alt="Calendario" width="300px">
                     </div>
             </div>
 

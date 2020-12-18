@@ -103,9 +103,9 @@
                                 <label for="titulo" style="font-size:20px;color: rgba(144, 12, 52);"> Tipo de Cita: </label>
                             </div>
                             <div class="col-6">
-                            <select class="form-control" name="txtTitulo" id="txtHora" required >
-                            <option>Primera Cita</option>
-                            <option>Seguimiento</option>
+                            <select class="form-control" name="txtTitulo" id="txtTitulo" required >
+                            <option value="Primera Cita">Primera Cita</option>
+                            <option value="Seguimiento">Seguimiento</option>
                         </select>
 
                             </div>

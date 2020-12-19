@@ -62,6 +62,9 @@
             
         ?>
         <input type="hidden" value="<?php echo $idCita;?>" name="idCita">
+        <input type="hidden" value="<?php echo $hc;?>" name="hidratos">
+        <input type="hidden" value="<?php echo $prot;?>" name="proteinas">
+        <input type="hidden" value="<?php echo $lip;?>" name="lipidos">
             <p class="h4">Cita - <small>Tratamiento Nutricional</small></p>
             <hr> 
             <p>Estos son los valores calculados por el sistema para el tratamiento:</p>

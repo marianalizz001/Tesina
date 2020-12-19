@@ -16,7 +16,7 @@
 
     $consulta = $bd->Cita->updateOne(
         ['_id' => new \MongoDB\BSON\ObjectID($idCita)],
-        ['$set' => ['seguimiento.Tratamiento' => $var_json],'status'=>'1'],
+        ['$set' => ['seguimiento.Tratamiento' => $var_json]],
     );
 
     if ($consulta->getModifiedCount() > 0) {

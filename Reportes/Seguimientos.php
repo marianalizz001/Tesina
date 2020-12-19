@@ -155,7 +155,7 @@
         $pdf->Cell(50,5,utf8_decode("CÁLCULO DE CALORIAS"),0,1,'C');
 		$pdf->Ln();
 		
-		$obj = json_decode($Valores);
+		$obj = json_decode($Tratamiento);
 
         $pdf->SetTextColor(0,0,0);
 		$pdf->SetFont('Arial','B',12);
@@ -221,14 +221,14 @@
 		$pdf->SetFillColor(232,232,232);
         $pdf->SetTextColor(21,70,97);
         $pdf->SetFont('Helvetica','B',12);
-        $pdf->Cell(50,5,utf8_decode("CONSIDERACIONES ESPECIFICAS"),0,1,'C');
+        $pdf->Cell(70,5,utf8_decode("CONSIDERACIONES ESPECIFICAS"),0,1,'C');
         $pdf->Ln();
 
         $pdf->SetTextColor(0,0,0);
 		$pdf->SetFont('Arial','B',12);
 
 	
-		$pdf->Cell(50,140,utf8_decode($obj->{'consideraciones'}),1,1,'L');
+		$pdf->Cell(50,6,utf8_decode($obj->{'consideraciones'}),1,1,'L');
 	
 
 

@@ -162,12 +162,13 @@
                                             echo '<td>';
                                             if($seguimiento!=null){                                           
                                             ?>
+                                            
 
-                                            <form id="miFormulario3" action="" method="post">
+                                            <form  action="Reportes/Seguimientos.php" method="post">
                                                 <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$idCita.'"> 
                                                     <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">
                                                 '?>
-                                                <button onclick=submit title="Ir a odontograma" style="background:transparent;"><strong>Información</strong><i class="fas fa-file"></i></button>
+                                                <button onclick=submit title="Visualizar" style="background:transparent;"><strong>Información </strong><i class="fas fa-file"></i></button>
                                             </form>
                                             <?php
                                             }else{

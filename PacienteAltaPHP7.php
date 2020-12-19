@@ -18,6 +18,7 @@
         ['$set' => ['HistorialClinico.EvaluaciónBiométrica' => $var_json]]
     );
 
+
     if ($consulta->getModifiedCount() > 0) {
         ?>
             <script>

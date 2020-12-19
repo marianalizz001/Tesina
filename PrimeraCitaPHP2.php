@@ -16,12 +16,11 @@
 
     $consulta = $bd->Cita->updateOne(
         ['_id' => new \MongoDB\BSON\ObjectID($idCita)],
-        ['$set' => ['seguimiento.EvaluaciónAntropométrica' => $var_json]]
+        ['$set' => ['seguimiento.Valores' => $var_json]]
     );
 
-
     if ($consulta->getModifiedCount() > 0) {
-        header('location: PrimeraCita2.php?idCita='.$idCita.'');
+        header('location: PrimeraCita3.php?idCita='.$idCita.'');
     } else {
         echo "<script language=JavaScript>alert('Hubo un error');</script>";
     }

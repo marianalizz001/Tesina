@@ -68,7 +68,6 @@
 			'start' => $Fecha_Inicial,
 			'end' => $Fecha_Final,
 			'estatus' => NULL,
-			'seguimiento' => NULL,
 			'Usuario_idUsuario' => $id,
 	   ]);
 		if($consulta->getInsertedCount() > 0){

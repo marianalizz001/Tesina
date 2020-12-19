@@ -27,14 +27,12 @@
     <?php $idUsuario = $_POST['idUsuario']; 
             $idCita=$_POST['idCita'];
         ?>
-
+        
         <input type="hidden" value="<?php echo $idUsuario;?>" name="idUsuario">
-        <input type="hidden" value="<?php echo $idCita;?>" name="idCita">
-        <input type="hidden" value="<?php echo $idCita;?>" name="idCita">
+        <input type="hidden" value="<?php echo $idCita;?>" name="idCita">   
         <p class="h4"> Cita - <small>Evaluación Antropométrica</small></p>
         <hr>
         <div class="form-row">
-            <input type="hidden" value="<?php echo $idCita;?>" name="idCita">
     
             <div class="form-group col-sm-6 col-md-2">
                 <label for="fecha" style="font-size:20px;color: rgba(144, 12, 52);"> Fecha: </label>
@@ -43,7 +41,7 @@
 
             <div class="form-group col-sm-6 col-md-3">
                 <label for="peso_actual" style="font-size:20px;color: rgba(144, 12, 52);"> Peso Actual (kg)</label>
-                <input type="number" class="form-control" name="peso_actual" step=.01 min=0 required>
+                <input type="number" class="form-control" id="peso_actual" name="peso_actual" step=.01 min=0 required>
             </div>
 
             <div class="form-group col-sm-6 col-md-3">
@@ -53,7 +51,7 @@
 
             <div class="form-group col-sm-6 col-md-4">
                 <label for="peso_ideal" style="font-size:20px;color: rgba(144, 12, 52);"> PESO IDEAL (kg): </label>
-                <input type="text" class="form-control" id="peso_ideal" name="peso_habitual" min=0 step=.01 required>
+                <input type="text" class="form-control" id="peso_ideal" name="peso_ideal" min=0 step=.01 required>
             </div>
         </div>
         <div class="form-row">

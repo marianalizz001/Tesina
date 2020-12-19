@@ -111,7 +111,7 @@ $(document).ready(function () {
                             <?php
                         }else{
                             ?>
-                            <form id="miFormulario2" action="Cita.php" method="post">
+                            <form id="miFormulario2" action="PrimeraCita.php" method="post">
                                 <?php echo '<input type="hidden" name="idCita" id="idCita" value="'.$id.'"> 
                                     <input type="hidden" name="idUsuario" id="idUsuario" value="'.$idUsuario.'">'
                                 ?>
